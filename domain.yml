@@ -1,0 +1,2530 @@
+version: '3.1'
+intents:
+- A_email
+- Conseil_Administration
+- Gouvernance_alamana
+- Q_sur_Condition
+- Q_sur_Condtion_2
+- Q_sur_garanties
+- Q_sur_garanties_2
+- Q_sur_utilisation
+- Q_sur_utilisation_2
+- adresse
+- affirmation
+- bureau_executif
+- bye
+- chiffre
+- cin
+- condition_1
+- condition_2
+- condition_3
+- condition_4
+- condition_5
+- condition_6
+- condition_7
+- condition_8
+- contrat_type_1
+- contrat_type_2
+- date_naissance
+- dates_cle_alamana
+- debuts_alamana
+- distinctions_alamana
+- expansion_alamana
+- forme_juridique
+- garantie_1
+- garantie_2
+- garantie_1_L
+- garantie_2_L
+- garantie_3_L
+- identite_alamana
+- inffirmation
+- membre_Bureau_executif
+- membre_C_Administration
+- membre_Comite_executif
+- mission_alamana
+- montant
+- nlu_fallback
+- nom
+- nombre_agences_alamana
+- offres_financiers
+- offres_non_financiers
+- partenaires_alamana
+- partenaires_alamana_2
+- passe_une_demande
+- prenom
+- prix_distinctions_alamana
+- question_concernant_offre
+- question_sur_offre_generale
+- reseau_agences_alamana
+- salutation
+- secteur_activite
+- stop
+- valeurs_alamana
+- vision_alamana
+- question_sur_adresse_agences
+- A_ville
+- A_quartier
+- patente
+- RC
+- ICE
+- question_date_creation
+- offre_non_F_3
+- offre_non_F_2
+- offre_non_F_1
+- question_pour_avoir_montant_x
+- question_siege_centrale
+- question_contact
+- question_sur_montant
+- question_combient_offre
+- question_pour_simulation
+- chiffres_cles
+
+actions:
+- utter_list_O_nonF
+- utter_R_O_non_financier
+- action_offre_non_financier
+- utter_assistance
+- action_stop_form1
+- utter_identite_alamana
+- action_reset_all_slots
+- utter_bye
+- utter_R_O_financier
+- utter_QP_sur_condition
+- utter_Bonjour
+- utter_question_sur_offre
+- action_condition_offre
+- action_offre_souhaitez
+- utter_confirametion_pour_demande
+- utter_ask_continue
+- utter_greet
+- action_garanties_offre
+- utter_Q_pour_utilisation
+- action_utilisation_offre
+- validate_indentification_form
+- action_ask_six_mois_activite
+- action_ask_A_G_revenu
+- action_ask_condition
+- validate_form1_form
+- action_ask_offre
+- action_ask_montant_souhaite
+- action_ask_garantie
+- validate_cherche_agence
+- action_ask_adresse_a
+- action_fallback
+- action_ask_cherche_agence_2
+- action_ask_type_locale
+
+entities:
+- offre_souhaitez
+- partenaire
+
+forms:
+  cherche_agence:
+    required_slots:
+    - adresse_a
+
+
+  indentification_form:
+    required_slots:
+    - nom
+    - prenom
+    - cin
+    - adresse
+    - date_naissance
+    - numero_telephone
+  form1_form:
+    required_slots:
+    - A_G_revenu
+    - six_mois_activite
+    - condition
+    - contrat
+    - secteur_A
+    - type_demande
+    - activite
+    - nom
+    - prenom
+    - cin
+    - adresse
+    - ville
+    - cherche_agence_1
+    - cherche_agence_2
+    - email
+    - agence_plus_proche
+    - numero_telephone
+    - date_naissance
+    - type_numero
+    - numero_RC_patente_ICE
+    - nom_entreprise
+    - GSME
+    - adresse_entreprise
+    - ville_entreprise
+    - frome_juridique
+    - offre
+    - montant_souhaite
+    - type_locale
+    - garantie
+    - revenu_mensuel
+    - charges_mensuelles
+    - charges_familiales
+    - excedant
+    - autre_revenu
+    - autres_pret
+    - confirmer_demande
+    - montant_finale
+slots:
+  adresse_a:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      conditions:
+      - active_loop: cherche_agence
+        requested_slot: adresse_a
+
+  partenaire:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: partenaire
+
+  offre_souhaitez:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: offre_souhaitez
+  nom:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: nom
+  prenom:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: prenom
+  cin:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: cin
+  adresse:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: adresse
+  ville:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: ville
+  
+  cherche_agence_1:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: ville
+
+  cherche_agence_2:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: cherche_agence_2
+
+  agence_plus_proche:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: email
+
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: email
+
+  date_naissance:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: date_naissance
+
+  numero_telephone:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: numero_telephone
+
+  six_mois_activite:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      value: true
+      conditions:
+      - active_loop: form1_form
+        requested_slot: six_mois_activite
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      value: false
+      conditions:
+      - active_loop: form1_form
+        requested_slot: six_mois_activite
+
+  A_G_revenu:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      value: true
+      conditions:
+      - active_loop: form1_form
+        requested_slot: A_G_revenu
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      value: false
+      conditions:
+      - active_loop: form1_form
+        requested_slot: A_G_revenu
+
+  condition:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: condition
+
+  contrat:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: contrat
+
+  secteur_A:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: secteur_A
+
+  activite:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: activite
+
+  nom_entreprise:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: nom_entreprise
+
+  GSME:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: GSME
+
+  ville_entreprise:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: ville_entreprise
+
+  adresse_entreprise:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: adresse_entreprise
+
+  frome_juridique:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: frome_juridique
+
+  type_numero:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: type_numero
+
+  numero_RC_patente_ICE:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: numero_RC_patente_ICE
+
+  type_demande:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: secteur_A
+
+  offre:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_non_financiers
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: offre
+
+  montant_souhaite:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: montant_souhaite
+  
+
+  type_locale:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: type_locale
+
+  garantie:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: garantie
+
+  revenu_mensuel:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: revenu_mensuel
+
+  charges_mensuelles:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: charges_mensuelles
+
+  charges_familiales:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: charges_familiales
+
+  autre_revenu:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: autre_revenu
+
+  excedant:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: excedant
+
+  autres_pret:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: autres_pret
+
+  montant_finale:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: confirmer_demande
+
+  confirmer_demande:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      not_intent:
+      - stop
+      - identite_alamana
+      - mission_alamana
+      - vision_alamana
+      - valeurs_alamana
+      - reseau_agences_alamana
+      - nombre_agences_alamana
+      - prix_distinctions_alamana
+      - partenaires_alamana
+      - partenaires_alamana_2
+      - dates_cle_alamana
+      - debuts_alamana
+      - expansion_alamana
+      - distinctions_alamana
+      - Gouvernance_alamana
+      - Conseil_Administration
+      - membre_C_Administration
+      - bureau_executif
+      - membre_Bureau_executif
+      - question_sur_offre_generale
+      - offres_financiers
+      - offres_non_financiers
+      - question_concernant_offre
+      - Q_sur_Condition
+      - Q_sur_utilisation
+      - Q_sur_garanties
+      - question_date_creation
+      - offre_non_F_1
+      - offre_non_F_2
+      - offre_non_F_3
+      - question_pour_avoir_montant_x
+      - question_siege_centrale
+      - question_contact
+      - question_sur_montant
+      - question_combient_offre
+      - question_pour_simulation
+      - chiffres_cles
+      conditions:
+      - active_loop: form1_form
+        requested_slot: confirmer_demande
+responses:
+  utter_pardon:
+  - text: Je suis désolé, je n'ai pas compris ce que vous voulez dire
+  - text: Pouvez-vous répéter s'il vous plaît ?& Je ne suis pas sûr d'avoir bien compris&
+  - text: Je ne comprends pas exactement ce que vous voulez dire, pourriez-vous reformuler ?&
+  utter_greet:
+  - text: ' Salut, comment puis-je vous aidez?&& si vous avez une question ou vous voulez faire une demande'
+  - text: |
+      Bonjour AL amana à votre service&
+      si vous avez une question ou vous voulez faire une demande
+  - text: |
+      Salut& 
+      comment pouvons-nous vous aider
+  utter_R_O_financier:
+  - text: "L'offre de al Amana Microfinance comprend des services financiers. &La gamme des produits financiers se décline en plusieurs types de microcrédits : les prêts individuels et solidaires destinés aux activités génératrices de revenus, mais aussi des prêts au logement. &L'approche de l'institution en matière de microcrédit s'articule autour d'un double objectif : promouvoir des microprojets mais aussi renforcer les capacités d'entreprenariat et d'autonomisation des bénéficiaires. &Cette offre comprend en outre le transfert d'argent et la micro-assurance"
+  utter_list_O_F:
+  - text: "Chez Al Amana vous pouvez choissir entre plusieurs offres de financement selon votre besoine &PRÊT SOLIDAIRE (PS): Financement du Fonds de Roulement et/ou investissement &PRÊT INDIVIDUEL À L'ENTREPRISE (PIE): - Achat d'immobilisations, de Matières Premières ou Marchandises - Financement d'un local commercial &PRÊT INDIVIDUEL AU LOGEMENT (PIL): - Acquisition d'une parcelle de terrain - Construction d'un logement de base - Extension d'un logement - Amélioration d'un logement - Branchement aux réseaux d'eau et/ou d'électricité - Avance pour achat d'un logement. &TAMWIL MOUMTAZ: destiné à couvrir vos besoins d'investissement et d'exploitation. &TAMWIL MILKIA: ·Acquisition d'un lot de terrain (Habitat + Exploitation) - Acquisition d'un logement (Habitat) - Acquisition d'un local commercial ou professionnel (Exploitation) &TAMWIL OTO: destiné pour l'acquisition d'un véhicule utilitaire neuf &TAMWIL TANMIYA: Financement des investissements - Couverture des besoins d'exploitation de l'entreprise - Besoins de fonds de roulement - Achat de matériel et outillage"
+  - text: "Al Amana met à votre disposition plusieurs offres de financement &PRÊT SOLIDAIRE (PS): Financement du Fonds de Roulement et/ou investissement &PRÊT INDIVIDUEL À L'ENTREPRISE (PIE): - Achat d'immobilisations, de Matières Premières ou Marchandises - Financement d'un local commercial &PRÊT INDIVIDUEL AU LOGEMENT (PIL): - Acquisition d'une parcelle de terrain - Construction d'un logement de base - Extension d'un logement - Amélioration d'un logement - Branchement aux réseaux d'eau et/ou d'électricité - Avance pour achat d'un logement. &TAMWIL MOUMTAZ: destiné à couvrir vos besoins d'investissement et d'exploitation. &TAMWIL MILKIA: ·Acquisition d'un lot de terrain (Habitat + Exploitation) - Acquisition d'un logement (Habitat) - Acquisition d'un local commercial ou professionnel (Exploitation) &TAMWIL OTO: destiné pour l'acquisition d'un véhicule utilitaire neuf &TAMWIL TANMIYA: Financement des investissements - Couverture des besoins d'exploitation de l'entreprise - Besoins de fonds de roulement - Achat de matériel et outillage"
+  utter_list_O_F_lite:
+  - text: "Voila nos offres de financement  &PRÊT SOLIDAIRE (PS)&PRÊT INDIVIDUEL À L'ENTREPRISE (PIE)&PRÊT INDIVIDUEL AU LOGEMENT (PIL)&TAMWIL MOUMTAZ&TAMWIL MILKIA&TAMWIL OTO&TAMWIL TANMIYA"
+  - text: "Voila la liste de nos offres&PRÊT SOLIDAIRE (PS)&PRÊT INDIVIDUEL À L'ENTREPRISE (PIE)&PRÊT INDIVIDUEL AU LOGEMENT (PIL)&TAMWIL MOUMTAZ&TAMWIL MILKIA&TAMWIL OTO&TAMWIL TANMIYA"
+
+  
+  utter_R_O_non_financier:
+  - text: " L'offre de al Amana microfinance comprend également, des services non financiers de formation, d'accompagnement, et d'appui à la commercialisation et à la visibilité des produits de ses clients"
+  utter_question_sur_offre:
+  - text: Quelle offre vous intéresse le plus ?&
+  - text: Laquelle de ces offres vous semble la plus intéressante ?&
+  - text: Laquelle de ces propositions vous intéresse le plus ?&
+  utter_RTmoumtaz:
+  - text: "Pour Tamwill Moumtaz, Alamana vous propose un financement compris entre 10 000DH et 50 000DH pour développer votre entreprise&bénéficiez d'une tarification adaptée et de garanties allégées ! &Prêt remboursable via échéances mensuelles sur une durée de 1à 5ans "
+  utter_RTmilkia:
+  - text: |
+      TAMWIL MILKIA vous propose un financement de 10 000 à 150 000 dirhams, pour financer l'acquisition d'un lot de terrain, d'un logement (Habitat) ou d'un local commercial ou professionnel si vous etez: 
+      &un micro entrepreneur (Activité génératrice de revenu) 
+      &une TPE (personne physique et morale) 
+      &un Salarié 
+      &Fonctionnaire 
+      &Bailleur 
+      &Rentier 
+      &TAMWIL MILKIA est le bon choix pour vous
+  utter_RToto:
+  - text: |
+      Vous êtes une TPE dont la bonne marche de l'activité requiert l'acquisition d'un véhicule utilitaire neuf et vous ne souhaitez pas immobiliser vos fonds propres ou votre trésorerie professionnelle à cette fin ?&
+      &Tamwil Oto est conçu pour vous ! Allant de 10 000 dhs à 150 000 dhs, ce prêt est remboursable via échéances mensuelles sur une durée de 6 mois à 5 ans
+  utter_RTtanmiya:
+  - text: |
+      TAMWIL TANMIYA vous propose un financement de 50 000 à 150 000 dirhams pour developper votre entreprise 
+      &Le prêt est remboursable en mensualités sur une période allant de 1 à 7 ans 
+      &si vous etez Microentrepreneur ou un TPE Demandez Tamwil Tanmiya et bénéficiez d'avantages qui vous conviennent et répondent à vos besoins
+  utter_RPIL:
+  - text: Vous souhaitez acquérir une parcelle de terrain, construire ou étendre votre logement, y brancher l'eau et/ou d'électricité ?& al Amana Microfinance a conçu pour vous le Prêt individuel au logement (PIL). &Le montant de ce prêt est de 1.000 à 48.000 Dirhams et la durée de remboursement s'étale de 6 mois à 4 ans. Ce prêt s’adresse aux micro-entrepreneurs avec ou sans local, aux salariés, aux fonctionnaires. &Vous êtes également éligibles si vous bénéficiez d'un loyer ou d'une retraite ou de celle de votre conjoint(e).
+  utter_RPIE:
+  - text: Si vous êtes un entrepreneur cherchant à développer votre micro-entreprise et avez besoin de financement.&Al Amana Microfinance peut vous offrir le Prêt Individuel à l'Entreprise.&Ce prêt est conçu pour les entrepreneurs comme vous et offre des montants allant de 1000 à 48 000 DH remboursables sur une période flexible de 6 mois à 4 ans.&Obtenez les fonds nécessaires pour propulser votre entreprise vers de nouveaux sommets grâce à Al Amana Microfinance et son Prêt Individuel à l'Entreprise.
+  - text: Vous êtes porteur d'un projet engagé à développer votre micro-entreprise ?&&Vous cherchez des fonds pour développer votre activité ?&&Al Amana Microfinance a conçu pour vous le Prêt individuel à l'entreprise.&Son montant varie de 1000 à 48.000 DH remboursables sur une durée de 6 mois à 4 ans
+  utter_RPS:
+  - text: Vous êtes plusieurs micro-entrepreneurs désireux de développer vos activités génératrices de revnus?& Al Amana Micro finance vous propose le Prêt Solidaire(PS). Ce produit s'adresse à des groupes de 2 à 5 Micro-entrepreneurs majeurs &. Les membres du groupe s'engagent à développer leur micro entreprise et à se cautionner mutuellement pour le remboursement de leur prêt. Les montants varient de 1000 à 48000 dirhams remboursables sur une durée de 3 à 24 mois pour les nouveaux, et de 3 à 48 mois pour les clients renouvelants
+  - text: Si vous faites partie d'un groupe de micro-entrepreneurs qui cherchent à développer leurs activités génératrices de revenus, alors le Prêt Solidaire (PS) d'Al Amana Microfinance est fait pour vous. Ce produit est destiné aux groupes de 2 à 5 micro-entrepreneurs majeurs qui s'engagent à développer leur entreprise tout en se portant caution mutuellement pour le remboursement de leur prêt. Les montants disponibles varient de 1000 à 48000 dirhams, avec une période de remboursement de 3 à 24 mois pour les nouveaux clients et de 3 à 48 mois pour les clients renouvelants. &Profitez de cette opportunité pour obtenir le financement nécessaire afin de développer vos activités commerciales grâce à Al Amana Microfinance et son Prêt Solidaire.
+  utter_RCondition_PIL:
+  - text: "Conditions générales d'éligibilité du client: &Justifier d'une CIN valide. &Être engagé à investir la totalité de votre prêt dans votre projet de logement et à ne pas le confier à un tiers. &Jouir une bonne moralité et transparence. &Disposer des garanties minimales exigées. &Votre projet logement est installé à la zone d'intervention du PDV &Être le chef de son ménage ou reconnu comme tel par les autres membres du ménage. &Disposer du titre de propriété, contrat de vente et/ou du compromis de vente ou d'autres documents justificatifs, tels les récépissés de paiement d’une avance ou de l'enregistrement. &Disposer des autorisations nécessaires pour la construction ou l'aménagement du projet logement."
+  utter_RCondition_PIE:
+  - text: 1. Justifiant d'une CIN valide. &2. Être propriétaire et unique gérant de votre activité, les activités gérées par des associés ne sont pas acceptées. &3. Engagé à investir la totalité de son prêt dans votre entreprise/exploitation et à ne pas le confier à un tiers. &4. Jouir d'une bonne moralité et transparence. &5. Disposer des garanties minimales exigées.
+  utter_RCondition_PS:
+  - text: "&1. Avoir une CIN valide. &2. Être propriétaire et unique gérant de votre activité, les activités gérées par des associés ne sont pas acceptées. &3. Être engagé à investir la totalité de son prêt dans votre entreprise/exploitation et à ne pas le confier à un tiers. &4. Jouir d'une bonne moralité et transparence. &5. Disposer des garanties minimales exigées."
+  utter_R_utilisation_PIL:
+  - text: "Acquisition d'une parcelle de terrain : La parcelle doit être située dans un lotissement aménagé et équipé selon la loi en vigueur. &Construction d'un logement de base. &Extension d'un logement : ajout d'un niveau, aménagements et transformations internes ou externes tels que l'agrandissement d'une pièce.. &Amélioration d'un logement : carrelage, revêtement sols et murs, peinture, menuiserie, ferronnerie… &Branchement aux réseaux d'eau et/ou d'électricité. &Avance pour achat d'un logement."
+  utter_R_utilisation_PIE:
+  - text: "• Achat d'immobilisations, de Matières Premières ou Marchandises et Aménagement de la Micro Entreprise. &• Financement d'un local commercial : &- Achat ou construction d'un nouveau local commercial, d'un entrepôt ou d'un bureau pour une utilisation commerciale, service ou à caractère industriel. &- Aménagement d'un nouveau local commercial. &- Achat de fonds de commerce. &- Avance pour achat de fonds de commerce ou pour achat /construction/ aménagement d'un nouveau local commercial, entrepôt, bureau ou atelier de production."
+  utter_R_utilisation_PS:
+  - text: Financement du Fonds de Roulement et/ou investissement.
+  utter_R_garanties_PIL:
+  - text: "Contrat de prêt. &Reconnaissance de dette. &Contrat de nantissement des biens : pour la garantie SP. &Contrat d'hypothèque pour la garantie hypothèque"
+  utter_R_garanties_PIE:
+  - text: 'Contrat de prêt Individuel &Reconnaissance de dette &Contrat de nantissement des biens : pour la garantie SP. Contrat de nantissement de fonds de commerce : pour la garantie NFC'
+  utter_R_garanties_PS:
+  - text: Reconnaissance de dette individuelle. &Contrat de prêt solidaire
+  utter_list_O_nonF:
+  - text: 'Vous voulez savoir plus de details sur : &ACCOMPAGNEMENT ET FORMATION (AF) &APPUI À LA COMMERCIALISATION (AC) &PARTICIPEZ AUX CONCOURS (PC)'
+  utter_QP_sur_condition:
+  - text: vous voulez connaître les conditions de cette offre ?&
+  - text: vous voulez savoir les conditions éligibilité pour cette offre ?&
+  utter_RCondition_TT:
+  - text: |
+      Pour bénéficier de TAMWIL TANMIA il suffit d'avoir une des condition suivantes : 
+      &Être inscrit au registre de commerce
+      &Disposer du statut d'auto-entrepreneur 
+      &Être assujetti à la taxe professionnelle  
+      &Être inscrit dans des registres professionnels gérés par des instances gouvernementales ou des instances indépendantes reconnues par les autorités 
+      &Disposer d'une autorisation d'exercer ou d'un agrément professionnel octroyé par une autorité gouvernementale ou locale reconnue 
+      &Disposer d'un compte bancaire 
+  - text: |
+      Avoir un crédit de TAMWIL TANMIA nessiste que vous Répondez au moins à l'une des conditions suivantes :
+      &Être inscrit au registre de commerce
+      &Disposer du statut d'auto-entrepreneur 
+      &Être assujetti à la taxe professionnelle 
+      &Être inscrit dans des registres professionnels gérés par des instances gouvernementales ou des instances indépendantes reconnues par les autorités
+      &Disposer d'une autorisation d'exercer ou d'un agrément professionnel octroyé par une autorité gouvernementale ou locale reconnue
+      &Disposer d'un compte bancaire
+  utter_RCondition_TM:
+  - text: |
+      Avoir un crédit de TAMWIL MOUMTAZ nécessite que vous Répondez au moins à l'une des conditions suivantes :
+      &Être inscrit au registre de commerce
+      &Disposer du statut d'auto-entrepreneur 
+      &Être assujetti à la taxe professionnelle 
+      &Être inscrit dans des registres professionnels gérés par des instances gouvernementales ou des instances indépendantes reconnues par les autorités
+      &Disposer d'une autorisation d'exercer ou d'un agrément professionnel octroyé par une autorité gouvernementale ou locale reconnue
+  - text: |
+      Être inscrit au registre de commerce
+      &Disposer du statut d'auto-entrepreneur 
+      &Être assujetti à la taxe professionnelle 
+      &Être inscrit dans des registres professionnels gérés par des instances gouvernementales ou des instances indépendantes reconnues par les autorités
+      &Disposer d'une autorisation d'exercer ou d'un agrément professionnel octroyé par une autorité gouvernementale ou locale reconnue
+      &si vous disposez de l'un de ces conditions alors vous pouvez bénéficier de TAMWIL MOUMTAZ 
+  - text: |
+      Pour bénéficier de TAMWIL MOUMTAZ il suffit d'avoir une des condition suivantes :
+      &Être inscrit au registre de commerce 
+      &Disposer du statut d'auto-entrepreneur 
+      &Être assujetti à la taxe professionnelle 
+      &Être inscrit dans des registres professionnels gérés par des instances gouvernementales ou des instances indépendantes reconnues par les autorités
+      &Disposer d'une autorisation d'exercer ou d'un agrément professionnel octroyé par une autorité gouvernementale ou locale reconnue
+  utter_RCondition_TMilkia:
+  - text: |
+      Pour bénéficier de TAMWIL MILKIA 
+      &L'âge du client doit varier entre : 
+      &Minimum : 18 ans à la date où il dépose sa demande de prêt 
+      &Maximum : 65 ans à la date prévue de la dernière échéance du prêt
+      &<La même condition s'applique sur le gérant en cas de personne morale> 
+      &Et il suffit d'avoir une des condition suivantes : 
+      &Être inscrit au registre de commerce
+      &Disposer du statut d'auto-entrepreneur
+      &Être assujetti à la taxe professionnelle
+      &Être inscrit dans des registres professionnels gérés par des instances gouvernementales ou des instances indépendantes reconnues par les autorités
+      &Disposer d'une autorisation d'exercer ou d'un agrément professionnel octroyé par une autorité gouvernementale ou locale reconnue
+  - text: " &Être inscrit au registre de commerce &Disposer du statut d'auto-entrepreneur &Être assujetti à la taxe professionnelle &Être inscrit dans des registres professionnels gérés par des instances gouvernementales ou des instances indépendantes reconnues par les autorités &Disposer d'une autorisation d'exercer ou d'un agrément professionnel octroyé par une autorité gouvernementale ou locale reconnue &si vous disposez de l'un de ces conditions alors vous pouvez bénéficier de TAMWIL MILKIA &Pour L'âge du client doit varier entre : &Minimum : 18 ans à la date où il dépose sa demande de prêt &Maximum : 65 ans à la date prévue de la dernière échéance du prêt &La même condition s'applique sur le gérant en cas de personne morale"
+  utter_RCondition_TOto:
+  - text: |-
+      &Être inscrit au registre de commerce 
+      &Disposer du statut d'auto-entrepreneur 
+      &Être assujetti à la taxe professionnelle 
+      &Être inscrit dans des registres professionnels gérés par des instances gouvernementales ou des instances indépendantes reconnues par les autorités
+      &Disposer d'une autorisation d'exercer ou d'un agrément professionnel octroyé par une autorité gouvernementale ou locale reconnue
+      &si vous disposez de l'un de ces conditions alors vous pouvez bénéficier de TAMWIL OTO 
+  - text: |-
+      Avoir un crédit de TAMWIL OTO nessiste que vous Répondez au moins à l'une des conditions suivantes :
+      &Être inscrit au registre de commerce 
+      &Disposer du statut d'auto-entrepreneur 
+      &Être assujetti à la taxe professionnelle 
+      &Être inscrit dans des registres professionnels gérés par des instances gouvernementales ou des instances indépendantes reconnues par les autorités
+      &Disposer d'une autorisation d'exercer ou d'un agrément professionnel octroyé par une autorité gouvernementale ou locale reconnue
+  - text: |-
+      Pour bénéficier de TAMWIL OTO il suffit d'avoir une des condition suivantes :
+      &Être inscrit au registre de commerce 
+      &Disposer du statut d'auto-entrepreneur 
+      &Être assujetti à la taxe professionnelle 
+      &Être inscrit dans des registres professionnels gérés par des instances gouvernementales ou des instances indépendantes reconnues par les autorités 
+      &Disposer d'une autorisation d'exercer ou d'un agrément professionnel octroyé par une autorité gouvernementale ou locale reconnue
+  utter_R_utilisation_moumtaz:
+  - text: Tamwill Moumtaz est destiné à couvrir vos besoins d'investissement et d'exploitation
+  - text: Tamwill Moumtaz est conçu pour répondre à tous vos besoins de financement et d'investissement
+  - text: Avec Tamwill Moumtaz, vous pouvez obtenir le financement dont vous avez besoin pour faire croître votre entreprise
+  utter_R_utilisation_tanmiya:
+  - text: |-
+      Tamwill Tanmiya vous permet de:
+      &Financer vos investissements 
+      &Couverture les besoins d'exploitation de l'entreprise 
+      &Besoins de fonds de roulement 
+      &Achat de matériel et outillage
+  - text: Avec Tamwill Tanmiya, vous pouvez obtenir les fonds nécessaires pour couvrir les coûts d'investissement et les besoins de votre entreprise
+  - text: Tamwill Tanmiya vous offre les moyens de financer tous les besoins d'exploitation et de fonds de roulement de votre entreprise& ainsi le financement d'achat de matériel et d'outillage pour assurer la croissance de votre entreprise
+  utter_R_utilisation_oto:
+  - text: Tamwill OTO est destiné pour l'acquisition d'un véhicule utilitaire neuf
+  - text: Tamwill OTO a pour objectif de financer l'achat d'un véhicule utilitaire neuf
+  - text: Si vous avez besoin d'un véhicule utilitaire neuf, le Tamwill OTO peut vous fournir un financement
+  - text: Tamwill OTO est spécifiquement destiné à l'achat d'un véhicule utilitaire neuf
+  utter_R_utilisation_milkia:
+  - text: "&Acquisition d'un lot de terrain (Habitat + Exploitation) &Acquisition d'un logement (Habitat) &Acquisition d'un local commercial ou professionnel (Exploitation)"
+  - text: Tamwill Milkia est spécialisé dans l'acquisition de biens immobiliers à usage d'habitation ou professionnel
+  - text: L'objectif principal de Tamwill Milkia est de faciliter l'achat de terrains, de logements et de locaux commerciaux ou professionnels
+  utter_R_garanties_moumtaz:
+  - text: "Fonction du montant du prêt, les garanties exigées varient entre : &Signature Personnelle &caution d'un tiers &nantissement de Fond de commerce"
+  - text: |-
+      les garanties demande dans Tamwil moumtaz varient entre : 
+      &Signature Personnelle
+      &Caution d'un tiers 
+      &Nantissement de Fond de commerce
+  - text: |-
+      Pour avoir Tamwill Moumtaz, ALamana exige soit Un Caution d'un tiers , Une signature Personnelle ou bien Nantissement de Fond de commerce
+      &ça dépend du montant du prêt 
+  utter_R_garanties_tanmiya:
+  - text: 'Pour bénificier de Tamwil Tanmiya, Alamana exige &Caution Solidaire &Nantissement du fond de commerce '
+  - text: 'Les garanties demander dans Tamwil Tanmiya sont un Caution Solidaire ,ou bien un Nantissement du fond de commerce  '
+  - text: |-
+      Pour avoir Tamwill Tanmiya, ALamana exige:
+      &Caution Solidaire 
+      &Nantissement du fond de commerce 
+  utter_R_garanties_oto:
+  - text: 'je ne connu pas les garanties exigées pour avoir tamwil oto apres je veux vous repondre à cette question '
+  utter_r_garanties_milkia:
+  - text: |-
+      les garanties exigées dans Tamwil Milkia sont:
+      &les terrains disposant de titres fonciers bien établis 
+      &Caution Solidaire dans le cas d'une TPE Personne Morale
+  - text: Alamana exige dans Tamwil Milkia que le terrain dispose de titre foncier bien établi ou bien une Caution Solidaire dans le cas d'une TPE Personne Morale
+  - text: Pour bénificier de Tamwil Milkia le terrain doit disposer d'un titre foncier , et pour le cas d'une TPE Personne Morale une Caution Solidaire
+  utter_Q_pour_utilisation:
+  - text: 'voullez-vous savoir a quoi cet offre peut vous servire ?& '
+  - text: "voullez-vous savoir a quoi ca peut vous servire ?&" 
+  - text: 'je peux vous montre les utilisations de cet offre ?& '
+  - text: 'voullez-vous savoir les utilisations de cet offre ?& '
+  
+  utter_ask_nom:
+  - text: Veuillez saisir votre nom
+  utter_ask_prenom:
+  - text: Veuillez saisir votre prenom
+  utter_ask_adresse:
+  - text: 'Veuillez saisir votre ADRESSE  '
+  utter_ask_ville:
+  - text: Veuillez saisir votre ville
+  utter_ask_email:
+  - text: Veuillez saisir votre adresse mail
+  utter_ask_cin:
+  - text: saisir votre CIN
+  utter_ask_date_naissance:
+  - text: Veuillez saisir votre date de naissance&merci de respecter la forme suivante jj-mm-aaaa :)
+  utter_ask_numero_telephone:
+  - text: 'Veuillez saisir votre GSM '
+  utter_ask_numero_RC_patente_ICE:
+  - text: 'Veuillez saisir le numero de votre {type_numero}'
+  utter_ask_nom_entreprise:
+  - text: 'Veuillez saisir le nom de votre entreprise '
+  utter_ask_GSME:
+  - text: 'Veuillez saisir le GSM de votre entreprise '
+  utter_ask_adresse_entreprise:
+  - text: "Veuillez saisir l'adresse de votre entreprise "
+  utter_ask_contrat:
+  - text: |-
+      Est-ce que vous voulez créer votre demande :
+      &1 #	en votre nom personnel 
+      &2 #	au nom de votre entreprise 
+  utter_ask_secteur_A:
+  - text: |-
+      Quel est votre secteur d'activité ?&
+      &1 # Artisanat
+      &2 # Commerce
+      &3 # Privé
+      &4 # Public
+      &5 # Agriculture
+      &6 # Service
+  utter_ask_activite:
+  - text: Quel est votre activité ?&
+  utter_ask_frome_juridique:
+  - text: |-
+      Veuillez saisir la frome juridique de votre entreprise  
+          &1 # Société en nom collectif
+          &2 # Société en commandite simple
+          &3 # Association ou sté en participation
+          &4 # Société anonyme
+          &5 # Société en commandite par action  
+          &6 # Société à responsabilté limitée    
+          &7 # S.A.R.L. d'associé unique
+          &8 # Société coopérative
+          &9 # Société civile
+          &10 # Société de fait 
+          &11 # Entrepreneur individuel  
+  utter_submit_indentification_form:
+  - text: |-
+      vos informations ont t'été bien saisie
+      &vous vous appelez (Mr/Md) {nom} {prenom}&votre CIN est {cin}&votre adresse est {adresse} 
+      &votre date de naissance est {date_naissance} et votre numero de téléphone {numero_telephone}&merci de confermer vos informations
+  - text: |-
+      Parfait vous avez complete la premiere étape
+      &vous vous appelez (Mr/Md) {nom} {prenom}, votre CIN est {cin}, votre adresse est {adresse} 
+      &votre date de naissance est {date_naissance} et votre numero de téléphone {numero_telephone}
+  utter_indentification_form_slots:
+  - text: 'Mr/Md {nom} {prenom}  passons maintenant à la deuxiéme étape '
+  
+  utter_ask_continue:
+  - text: Vous voulez vraiment annuler la demande ?&
+  - text: Êtes-vous absolument sûr(e) que vous voulez annuler la demande ?&
+  - text: Êtes-vous sûr de vouloir annuler la demande ?&
+  utter_Bonjour:
+  - text: Bonjour, souhaitez-vous en savoir plus sur nos offres ?&
+  - text: Bonjour, aimeriez-vous découvrir nos offres ?&
+  - text: Bonjour, nos offres pourraient peut-être vous intéresser, voulez-vous en savoir plus ?&
+  utter_assistance:
+  - text: D'accord, je suis là pour vous guider dans le choix de l'offre la plus avantageuse pour vous
+  - text: Très bien, je suis là pour vous aider à trouver l'offre la plus adaptée à vos besoins
+  - text: je suis là pour vous aider à identifier l'offre qui répondra le mieux à vos besoins
+  utter_Q_6mois:
+  - text: |-
+      Avez-vous 6 mois dans la même activité ?& 
+      &OUI : 1
+      &NON : 2
+  - text: |-
+      Avez vous 6 mois de travail dans la même activité ?&
+      &OUI : 1
+      &NON : 2
+  - text: |-
+      Avez-vous travaillé dans la même activité pendant au moins six mois ?&
+      &OUI : 1
+      &NON : 2
+  utter_malheuressement:
+  - text: Désolé vous ne pouvez pas bénéficier de prêt auprès d'Alamana
+  - text: Malheureusement, vous ne remplissez pas les critères requis pour bénéficier de nos offres
+  - text: Nous sommes désolés, mais vous ne répondez pas aux exigences énoncées dans notre politique
+  - text: Nous ne sommes pas en mesure de vous proposer nos offres en raison de votre inéligibilité aux critères requis&
+  
+  utter_R_date_creation_alamana:
+  - text: "La date de création d'Alamana Microfinance remonte au 13 février 1997."
+  - text: "C'est le 13 février 1997 qu'Alamana Microfinance a été fondée."
+  - text: "Le 13 février 1997 marque la naissance d'Alamana Microfinance."
+  - text: "Alamana Microfinance a vu le jour le 13 février 1997."
+  
+  utter_Q_A_G_revenu:
+  - text: |-
+      Est-ce que vous exercez une activité génératrice de revenu ?&
+      &OUI : 1
+      &NON : 2
+  - text: |-
+      Avez-vous une source de revenus actuellement ?&
+      &OUI : 1
+      &NON : 2
+  utter_Q_condition:
+  - text: |-
+      Est-ce que vous répondez au moins à l'une des conditions suivantes : (numéro à saisir) ?&&
+      &1 # Vous êtes une personne morale (société)
+      &Si non est ce que :
+      &2 # Vous disposez du statut d'auto-entrepreneur 
+      &3 # Vous êtes assujetti à la taxe professionnelle (patente)
+      &4 # Vous êtes inscrit dans l'un des registres professionnels gérés par des instances gouvernementales ou des instances indépendantes reconnues par les autorités 
+      &5 # Vous disposez d'une autorisation d'exercer ou d'un agrément professionnel octroyé par une autorité gouvernementale ou locale reconnue 
+      &6 # Vous êtes inscrit au registre de commerce
+      &7 # Vous êtes un Salarié, Fonctionnaire, Bailleur ou Rentier
+      &8 # Vous êtes un particulier ne possédant aucune des conditions cités
+ 
+  utter_Q_offre_PM_EI:
+  - text: |-
+      Quel est votre besoin de financement ?&
+      &1 #	Achat de matériel, outillage, fond de roulement (Tamwil TANMYA)
+      &2 #	Financement pour développer l'entreprise, (Tamwil MOUMTAZ)
+      &3 #	Acquisition d'un lot de terrain, d'un logement, (Tamwil MILKIA)
+      &4 #	Acquisition d'un local commercial ou professionnel (Tamwil MILKIA)
+      &5 #	Achat de véhicule (Tamwil OTO)
+  utter_Q_offre_PP:
+  - text: |-
+      Quel est votre besoin de financement ?&
+      &1 #	Vous cherchez des fonds pour développer votre activité  (PIE)
+      &2 #	Vous désirez aménager votre logement (PIL)
+  utter_Q_montant_1:
+  - text: |-
+      Pour Tamwill {offre} vous pouvez avoir un montant de 50 000 dhs, jusqu'à 150 000 dhs 
+      &Saisir le montant souhaité ?
+  utter_Q_montant_2:
+  - text: |-
+      Pour Tamwill {offre} vous pouvez avoir un montant de 10 000 dhs, jusqu'à 150 000 dhs 
+      &Saisir le montant souhaité ?
+  utter_Q_montant_3:
+  - text: |-
+      Pour offre {offre} vous pouvez avoir un montant de 1 000 dhs, jusqu'à 48 000 dhs 
+      &Saisir le montant souhaité ?
+  
+  utter_ask_revenu_mensuel:
+  - text: A combien vous estimez le revenu mensuel de votre activité ?&
+  utter_ask_charges_mensuelles:
+  - text: A combien sont estimé vos Charges mensuelles ?&
+  utter_ask_charges_familiales:
+  - text: A combien sont estimé vos Charges familiales ?&
+  utter_ask_autre_revenu:
+  - text: Si vous avez d'autre revenu, combien par mois ?&
+  utter_ask_excedant:
+  - text: Combien il vous reste d'excédant ?&
+  utter_ask_autres_pret:
+  - text: |-
+      Est-ce que vous avez d'autres prêts ?&
+      &si oui quel est le montant total mensuel des traites ?&
+
+  utter_ask_confirmer_demande:
+  - text: |-
+      Mr/Md {nom}, vous avez terminer tous les étapes de votre demande, merci de Confirmer 
+      &1 # je confirme
+      &2 # je ne confirme pas
+  utter_identite_alamana:
+  - text: |-
+      al Amana Microfinance est une association à but non lucratif, régie par le dahir du 15/11/1958 et 
+      les lois 18/97 et 58/03 relatives à l'exercice de l'activité du micro-crédit& Elle a été créée 
+      le 13 février 1997 et agréée en tant qu'Association de microcrédit par le Ministère des Finances 
+      le 31 mars 2000& Leader du secteur de la microfinance au Maroc, al Amana Microfinance dispose 
+      d'un réseau de plus de 646 agences dont 263 dans les zones urbaines et périurbaines,
+      303 dans les zones rurales et 81 véhicules mobiles desservant les zones les plus enclavées&
+      al Amana Microfinance a desservi 5 millions de prêts d'un montant global d'environ 50 milliards
+      de dirhams au profit de 2 millions de bénéficiaires
+  utter_identite_alamana_2:
+  - text: "vous pouvez également découvrir :&Sa mission&Sa vision&Ses valeurs&et autant d'informations à propos de notre établissement."
+  utter_mission_alamana:
+  - text: Sa mission est d'être un acteur important du développement économique et social de notre pays par le levier de l'inclusion financière
+  utter_vision_alamana:
+  - text: Sa vision est d'être l'institution de référence en microfinance, préférée par ses clients, desservant le plus grand nombre de bénéficiaires, offrant des services diversifiés et innovants,&performante financièrement et ayant un fort impact social
+  utter_valeurs_alamana:
+  - text: "Les valeurs de al Amana Microfinance portent sur : & Des valeurs fondamentales : l'Intégrité ; l'honnêteté ; la transparence et la responsabilité & Des valeurs de progrès : le goût de l'effort et de la persévérance ; le goût du succès ; la rigueur ; l'engagement et l'altruisme & Des valeurs professionnelles : La performance et le sens de l'innovation & Des valeurs collectives : L'appartenance et l'équité"
+  utter_stop_reponse:
+  - text: D'accord, Que puis-je faire pour vous ?&
+  - text: Ok, que puis-je faire pour vous aider ?&
+  - text: Bien sûr, comment puis-je vous aider ?&
+  utter_reseau_agences_alamana:
+  - text: Leader du secteur de la microfinance au Maroc, al Amana Microfinance dispose d'un réseau de plus de 646 agences dont 263 dans les zones urbaines et périurbaines, 303 dans les zones rurales et 81 véhicules mobiles desservant les zones les plus enclavées
+  utter_nombre_agences_alamana:
+  - text: al Amana Microfinance dispose d'un réseau de plus de 646 agences
+  utter_prix_distinctions_alamana:
+  - text: A l'avant-garde d'une microfinance responsable& al Amana Microfinance a été parmi les 13 premières signataires de la smart campaign, campagne mondiale de protection des clients du CGAP (groupe consultatif d'assistance aux pauvres de la banque mondiale)& Et depuis 2013, al Amana Microfinance fait partie de l'initiative des standards universels de gestion de la performance sociale (USSPM) lancée par la Social Performance Task Force (SPTF)& al Amana Microfinance a par ailleurs reçu plusieurs distinctions pour ses performances et sa transparence
+  utter_partenaires_alamana:
+  - text: "Acteur dynamique dans le secteur de la microfinance, al Amana Microfinance est membre de plusieurs organisations au niveau national et international : &- Membre de la FNAM (Fédération Nationale des Associations du Microcrédit) &- Membre fondateur de Sanabel (réseau de microfinance des pays arabes) &- Membre des réseaux internationaux de WWB (Women's World Banking) &- MFN (Microfinance Network) &- AMT (African Microfinance Transparency) &- MAIN (Microfinance African Institutions Network) &- CGAP (Consultative Group to Assist the Poor)"
+  utter_partenaires_alamana_2:
+  - text: Oui, al Amana fait partie de organisation {partenaire}
+  - text: Effectivement, al Amana est affilié à l'organisation {partenaire}
+  utter_dates_cle_alamana:
+  - text: Bien sur, Depuis sa création, Al Amana a connu différents événements qui peuvent être regroupés en périodes distinctes, notamment ses débuts, son Son expansion  et ses Ses distinctions.
+  utter_debuts_alamana:
+  - text: "1997 : Création de al Amana Microfinance. &2000 : al Amana Microfinance reçoit l'agrément du Ministère des finances pour exercer les activités de microcrédit. &2001 : al Amana Microfinance assure son autonomie financière. &2003 : al Amana Microfinance lance le premier test du prêt individuel à l'entreprise (PIE). &2004 : l'institution diversifie son offre de microcrédit et lance le prêt individuel au logement (PIL). &2005 : al AmanaMicrofinance passe le cap de 1000 salariés et 360 points de vente."
+  utter_expansion_alamana:
+  - text: "2006 : al Amana Microfinance connait une croissance annuelle spectaculaire : Le portefeuille des prêts passe de 763 à 1.843 Millions de dirhams (+142%) 2007 : L'institution est déjà une organisation forte de plus de 2000 salariés desservant plus de 400 000 clients. &2007 : Refonte du système d'information de l'institution. &2009 : L'institution adopte une nouvelle identité visuelle marquant le changement, la dynamique et l'attachement à ses valeurs fondatrices. &2011 : Lancement du projet d'entreprise « Oufouq 2015 ». &2012 : Lancement de 2 nouveaux produits : le transfert d'argent et la micro-assurance. &2013 : Le Conseil d'Administration de al Amana Microfinance décide de hisser la performance sociale au niveau des instances de gouvernance en créant un comité 'Stratégie et Utilité sociale' rattaché au bureau exécutif du Conseil d'Administration. &2014: al Amana Microfinance figure parmi les 9 meilleures grandes  entreprises certifiées meilleurs employeurs du Maroc au titre de l'année 2014 &2016: al Amana Microfinance organise, sa convention des cadres et lance son programme Oufouq 2018."
+  utter_distinctions_alamana:
+  - text: "2015: al Amana Microfinance cértifiée par la Smart Compaign &2015: al Amana Microfinance obtient la notation ''A'' au rating social (MICROFINANZA) &2015: al Amana Microfinance obtient la certification ISO 9001-2015"
+  utter_Gouvernance_alamana:
+  - text: "La  Gouvernance d'Al Amana Microfinance est constituée d'un Conseil d'Administration qui désigne parmi ses membres un Bureau Exécutif et des comités spécialisés qui lui sont directement rattachés. Le Conseil est composé de personnalités de la société civile de divers profils : économistes, universitaires, consultants, chefs d'entreprises, professionnels de la communication et commerçants, conjuguant leurs compétences respectives pour une gouvernance équilibrée."
+  utter_Gouvernance_alamana_2:
+  - text: "Vous voulez connaitre : &Conseil d'Administration &Membre du Conseil d'Administration &Bureau exécutif &Membre du Bureau exécutif &Membre du Comité exécutif"
+  utter_Conseil_Administration:
+  - text: Le Conseil d'Administration, qui compte actuellement 20 membres, définit les orientations stratégiques de l'institution et se prononce sur les décisions majeures relatives aux orientations économiques, sociales, financières ou technologiques de l'institution et veille à leur mise en œuvre par la Direction Générale placée sous le contrôle du Bureau Exécutif.
+  utter_membre_C_Administration:
+  - text: "M. Driss Jettou : Président d'honneur -- Industriel &M. Ahmed Ghazali : Président du Conseil d'Administration &M. Younes Slaoui : Secrétaire Général - Membre du comité audit &Mme Nadia Salah DILAMI : Vice présidente - Membre du comité ressources humaines &M. THAMI GHORFI : Vice President - Président du comité audit &M. Mourad HAMAYET : Trésorier - Président du comité Ressouces Humaines &M. Med Fouzi Mourji : Assesseur - Membre du comité SI et Digitalisation &Mme Mounia Boucetta : Assesseur - Membre du comité stratégie et utilité sociale &Docteur Abderrahmane Zahi : Assesseur - Membre du comité stratégie et utilité sociale &M. Lahcen AGNAOU : Assesseur -Président du comité SI et Digitalisation - Membre du comité Audit &M.Younes BENAKKI : Assesseur &M. Mustapha Boujrad : Assesseur - Membre du comité Ressources Humaines &SIDI : Représentant de la SIDI - Assesseur &Mme Khadija El Bakri : Assesseur &M. M'hamed Ellatify : Assesseur - Membre du comité Stratégie et Utilité Sociale &M. Mohammed Kabbaj : Assesseur &Mme Meriem Othmani :Assesseur - Membre du comité Stratégie et Utilité Sociale &M'Hamed Sedrati : Assesseur - Membre du comité Stratégie et Utilité Sociale &M. Driss KHROUZ : Assesseur - Membre du comité Stratégie et Utilité Sociale "
+  utter_bureau_executif:
+  - text: Le Bureau Exécutif est chargé de préparer les décisions du Conseil d'Administration, de l'assister dans sa réflexion, dans ses décisions et dans la mise en œuvre des orientations stratégiques.
+  utter_membre_Bureau_executif:
+  - text: 'M. Younes Slaoui : Secrétaire Général - Membre du comité audit &Mme Nadia Salah DILAMI : Vice présidente - Membre du comité ressources humaines &M. THAMI GHORFI : Vice President - Président du comité audit &M. Mourad HAMAYET : Trésorier - Président du comité Ressouces Humaines &M. Med Fouzi Mourji : Assesseur - Membre du comité SI et Digitalisation &Mme Mounia Boucetta : Assesseur - Membre du comité stratégie et utilité sociale &Docteur Abderrahmane Zahi : Assesseur - Membre du comité stratégie et utilité sociale'
+  utter_membre_Comite_executif:
+  - text: 'M.Youssef Bencheqroun : Directeur Général &M.hicham Talib : Directeur de pôle Ressources et Moyens &M.Badie El Hirache : Directeur de pôle Exploitation'
+  utter_R_Q_offre_generale:
+  - text: Oui bien sur, mais il faut savoir que nos offres sont divisées sur deux gammes Offres et services financiers et non financiers
+  - text: 'Nos offres sont segmentées en deux gammes : &Offres financières et Offres non-financières.&Donc il est important de bien choisir celle qui convient le mieux à vos besoins'
+  - text: Bien entendu, nous avons deux gammes de produits différentes :&Offres financières et Offres non-financières&alors assurez-vous de choisir celle qui répond le mieux à vos attentes.
+  utter_R_offre_AF:
+  - text: "L'accompagnement et l'assistance des clients sont au cœur de la mission de al Amana Microfinance. L'objectif est de favoriser un impact positif du microcrédit et prévenir les risques de surendettement. &Tout au long du processus d'octroi des prêts, nos agents de terrain dispensent à chaque client des conseils individualisés en fonction de sa situation et de ses difficultés. &Avant le déblocage des prêts, nos clients reçoivent systématiquement une formation de base pour comprendre divers aspects des produits qu'ils contractent : tarification, modalités de remboursement des prêts, droits et obligations des parties contractantes, l'obligation de la solidarité entre les membres du groupe, l'importance de la bonne utilisation du prêt et du respect des échéances de remboursement."
+  utter_R_offre_AC:
+  - text: "Valoriser les produits et les services de nos clients et promouvoir leurs ventes sont  au cœur de nos priorités. &Nous offrons à nos clients une gamme complète de prestations, dont : &--Un espace d'exposition des produits sur le site web de al Amana Microfinance. Les clients dont les produits sont présents sur cette vitrine ont accès à un espace personnel qu'ils peuvent gérer et actualiser en ligne ; &--Mise à disposition de stands dans différents salons, foires et rencontres organisées aux niveaux local, régional et national ; &--Offre gracieuse et support matériel et logistique pour la participation aux rencontres régionales organisées par le centre Mohammed VI de soutien à la microfinance solidaire. &Nos clients bénéficient ainsi d'une ouverture sur des marchés plus larges, d'une opportunité d'échange d'expériences et de bonnes pratiques et de réseautage professionnel."
+  utter_R_offre_PC:
+  - text: al Amana Microfinance rend hommage aux femmes et aux hommes ayant réussi, grâce au microcrédit à améliorer leurs revenus et leurs conditions de vie. &Nous valorisons nos clients en présentant leurs candidatures aux divers concours nationaux et internationaux récompensant les meilleurs projets.
+  utter_ask_type_numero:
+  - text: "Possédez-vous un registre de commerce (RC), patente ou un Identifiant Commun Entreprise (ICE) "
+  
+  utter_ask_ville_entreprise:
+  - text: "Veuillez saisir la ville de votre entreprise"
+  
+  utter_R_Q_pour_avoir_montant_x:
+  - text: "Absolument ! Chez alAmana, nous mettons à votre disposition plusieurs offres de prêt avec des montants pouvant aller jusqu'à 150 000 DH, en fonction de vos besoins. 
+  &De plus, je suis à votre disposition pour vous assister dans votre demande dès maintenant&Sinon vous pouvez trouvez dans ce lien un simulateur pour simulez votre micro crédit <a href='https://www.alamana.org.ma/fr/services-financiers/simulateur'  target='_blank'> cliquez ici </a>"
+  - text: "Bien sûr ! Chez alAmana, nous mettons à votre disposition plusieurs offres de prêt avec des montants allant jusqu'à 150 000 DH, en fonction de votre besoin.
+  &Je suis également là pour vous accompagner dans la réalisation de votre demande dès maintenant.&Dans ce lien vous pouvez trouvez un simulateur pour simulez votre crédit <a href='https://www.alamana.org.ma/fr/services-financiers/simulateur'  target='_blank'> cliquez ici </a>"
+
+  utter_R_adresse_siege:
+  - text: "L'adresse de notre siège est située au 40, Avenue AL FADILA C.Y.M à Rabat, Maroc, avec le code postal 10130."
+  - text: "Notre siège centrale est située au 40, Avenue AL FADILA C.Y.M à Rabat, Maroc, avec le code postal 10130."
+  - text: "Voila l'adresse de notre siège : 40, Avenue AL FADILA C.Y.M à Rabat, Maroc, avec le code postal 10130."
+
+
+  utter_R_contact:
+  - text: "Absolument, il est possible de nous contacter de différentes manières.&Vous pouvez nous joindre par téléphone au numéro +212 (0)5 37 28 95 00 ou par FAX au +212 (0)5 37 28 94 11/12/13.&Vous avez également la possibilité de laisser un message sur notre site web : https://www.alamana.org.ma/fr/contact. "
+  - text: "Bien entendu, vous avez la possibilité de nous contacter de différentes manières.& Vous pouvez nous joindre par téléphone au numéro suivant : +212 (0)5 37 28 95 00. Alternativement, vous pouvez également nous envoyer un fax au numéro : +212 (0)5 37 28 94 11/12/13.&Si vous préférez, vous pouvez laisser un message sur notre site web : https://www.alamana.org.ma/fr/contact."
+  
+  utter_R_montant_max:
+  - text: "Les montants des prêts peuvent varier de 1 000 DH à 150 000 DH, en fonction du produit choisi et de vos besoins.&N'hésitez pas à découvrir nos offres."
+  - text: "Les prêts sont disponibles dans une fourchette de montants allant de 1 000 DH à 150 000 DH, en fonction du produit sélectionné et de vos besoins.&N'hésitez pas à explorer nos offres."
+  - text: "Vous pouvez bénéficier de prêts dont les montants s'étendent de 1 000 DH à 150 000 DH, selon le produit choisi et vos besoins.&N'hésitez pas à découvrir nos offres."
+  - text: "Selon votre choix de produit et vos besoins, les montants des prêts peuvent aller de 1 000 DH à 150 000 DH.&N'hésitez pas à découvrir nos offres."
+  
+  utter_R_combient_offre:
+  - text: "chez alAmana nous proposons 7 produits&PRÊT SOLIDAIRE&PRÊT INDIVIDUEL À L'ENTREPRISE&PRÊT INDIVIDUEL AU LOGEMENT&Tamwil Moumtaz&Tamwil Milkia&Tamwil Oto&Tamwil Tanmiya"
+  - text: "chez alAmana vous pouvez choisir entre 7 offres&PRÊT SOLIDAIRE&PRÊT INDIVIDUEL À L'ENTREPRISE&PRÊT INDIVIDUEL AU LOGEMENT&Tamwil Moumtaz&Tamwil Milkia&Tamwil Oto&Tamwil Tanmiya"
+  
+  utter_R_Q_simulation:
+  - text: "Si vous souhaitez obtenir ces informations, je vous recommande d'utiliser notre simulateur qui vous aidera à faire le bon choix.&Vous pouvez accéder au simulateur<a href='https://www.alamana.org.ma/fr/services-financiers/simulateur'  target='_blank'> cliquez ici </a>"
+  - text: "Pour obtenir ces informations, je vous invite à utiliser notre simulateur qui vous aidera à prendre la bonne décision.&Vous pouvez accéder au simulateur via le lien suivant <a href='https://www.alamana.org.ma/fr/services-financiers/simulateur'  target='_blank'> cliquez ici </a>"
+  - text: "Pour obtenir ces informations, je vous invite à utiliser notre simulateur qui vous aidera à prendre une décision éclairée.&Vous pouvez accéder au simulateur <a href='https://www.alamana.org.ma/fr/services-financiers/simulateur'  target='_blank'> cliquez ici </a>"
+  
+  utter_Q_type_locale_1:
+  - text: "Est-ce que vous êtes   locataire ou propriétaire  de votre logement ?&&
+          1 # locataire&
+          2 # propriétaire"
+  - text: "Êtes-vous le locataire ou le propriétaire de votre logement ?&&
+          1 # locataire&
+          2 # propriétaire"
+
+  utter_Q_type_locale_2:
+  - text: "Est-ce que vous êtes   locataire ou propriétaire  de votre locale commercial ?&&
+          1 # locataire&
+          2 # propriétaire"
+  - text: "Êtes-vous le locataire ou le propriétaire de votre locale commercial ?&&
+          1 # locataire&
+          2 # propriétaire"
+  
+  utter_R_Q_chiffres_cle:
+  - text: 'al amana microfinance a servi à fin décembre 2022, + 330 milles prêts actifs dont  plus de 134 milles aux femmes, pour un encours de +2 milliard et 700 millions.&
+          Pour obtenir plus de détails, je vous invite à visiter le lien suivant : <a href = "https://www.alamana.org.ma/fr/alamana/chiffres-cles"  target="_blank">cliquez ici </a>&Vous avez également la possibilité de télécharger ce document <a href="https://www.alamana.org.ma/medias/tableau_de_bord_dal_amana_decembre_2022_1.pdf" target="_blank" download>Télécharger en format PDF</a>'
+
+  utter_bye:
+  - text: ' au revoir '
+  - text: ' merci pour votre temps'
+  - text: ' à bientôt'
+  - text: ' tchaw tchaw '
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

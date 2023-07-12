@@ -1,0 +1,298 @@
+version: "3.1"
+
+stories:
+
+
+
+    
+
+
+- story: salutation
+  steps: 
+  - intent: salutation
+  - action: utter_greet
+
+
+- story: path_question_offre_generale
+  steps:
+  - intent: question_sur_offre_generale
+  - action: utter_R_Q_offre_generale
+
+
+- story: question_offres_financiers
+  steps:
+  - intent: offres_financiers
+  - action: utter_R_O_financier
+  - action: utter_list_O_F
+  - action: utter_question_sur_offre 
+
+- story: question_offres_non_financiers
+  steps:
+  - intent: offres_non_financiers
+  - action: utter_R_O_non_financier
+  - action: utter_list_O_nonF
+
+
+
+- story: path_question_offre
+  steps:
+  - intent: question_concernant_offre
+    entities:
+    - offre_souhaitez: tanmiya
+  - slot_was_set:
+    - offre_souhaitez: tanmiya
+  - action: action_offre_souhaitez
+  - action: utter_QP_sur_condition
+  - intent: affirmation
+  - action: action_condition_offre
+  - action: utter_Q_pour_utilisation
+  - intent: affirmation
+  - action: action_utilisation_offre
+
+- story: path_question_offre_2
+  steps:
+  - intent: question_concernant_offre
+    entities:
+    - offre_souhaitez: tanmiya
+  - slot_was_set:
+    - offre_souhaitez: tanmiya
+  - action: action_offre_souhaitez
+  - action: utter_QP_sur_condition
+  - intent: inffirmation
+  - action: utter_Q_pour_utilisation
+  - intent: inffirmation
+
+- story: path_question_offre_3
+  steps:
+  - intent: question_concernant_offre
+    entities:
+    - offre_souhaitez: tanmiya
+  - slot_was_set:
+    - offre_souhaitez: tanmiya
+  - action: action_offre_souhaitez
+  - action: utter_QP_sur_condition
+  - intent: affirmation
+  - action: action_condition_offre
+  - action: utter_Q_pour_utilisation
+  - intent: inffirmation
+
+- story: path_question_offre_4
+  steps:
+  - intent: question_concernant_offre
+    entities:
+    - offre_souhaitez: tanmiya
+  - slot_was_set:
+    - offre_souhaitez: tanmiya
+  - action: action_offre_souhaitez
+  - action: utter_QP_sur_condition
+  - intent: inffirmation
+  - action: utter_Q_pour_utilisation
+  - intent: affirmation
+  - action: action_utilisation_offre
+  
+- story: path_question_condition
+  steps:
+  - intent: Q_sur_Condition
+    entities:
+    - offre_souhaitez: milkia
+  - slot_was_set:
+    - offre_souhaitez: milkia
+  - action: action_condition_offre
+
+- story: path_question_condition_2
+  steps:
+  - intent: Q_sur_Condtion_2
+  - action: action_condition_offre
+
+- story: path_question_utilisation
+  steps:
+  - intent: Q_sur_utilisation
+    entities:
+    - offre_souhaitez: oto
+  - slot_was_set:
+    - offre_souhaitez: oto
+  - action: action_utilisation_offre
+
+- story: path_question_utilisation2
+  steps:
+  - intent: Q_sur_utilisation_2
+  - action: action_utilisation_offre
+
+- story: path_question_garanties
+  steps:
+  - intent: Q_sur_garanties
+    entities:
+    - offre_souhaitez: oto
+  - slot_was_set:
+    - offre_souhaitez: oto
+  - action: action_garanties_offre
+
+- story: path_question_garanties_2
+  steps:
+  - intent: Q_sur_garanties_2
+  - action: action_garanties_offre
+
+ 
+
+- story: identite_alamana
+  steps:
+  - intent: identite_alamana
+  - action: utter_identite_alamana
+  - action: utter_identite_alamana_2
+
+- story: mission_alamana
+  steps:
+  - intent: mission_alamana
+  - action: utter_mission_alamana
+
+- story: vision_alamana
+  steps:
+  - intent: vision_alamana
+  - action: utter_vision_alamana
+
+- story: valeurs_alamana
+  steps:
+  - intent: valeurs_alamana
+  - action: utter_valeurs_alamana
+
+- story: reseau_agences_alamana
+  steps:
+  - intent: reseau_agences_alamana
+  - action: utter_reseau_agences_alamana
+
+- story: nombre_agences_alamana
+  steps:
+  - intent: nombre_agences_alamana
+  - action: utter_nombre_agences_alamana
+
+- story: prix_distinctions_alamana
+  steps:
+  - intent: prix_distinctions_alamana
+  - action: utter_prix_distinctions_alamana
+
+- story: partenaires_alamana
+  steps:
+  - intent: partenaires_alamana
+  - action: utter_partenaires_alamana
+
+
+- story: partenaires_alamana_2
+  steps:
+  - intent: partenaires_alamana_2
+  - action: utter_partenaires_alamana_2
+
+
+- story: dates_cle_alamana
+  steps:
+  - intent: dates_cle_alamana
+  - action: utter_dates_cle_alamana
+
+- story: debuts_alamana
+  steps:
+  - intent: debuts_alamana
+  - action: utter_debuts_alamana
+
+- story: expansion_alamana
+  steps:
+  - intent: expansion_alamana
+  - action: utter_expansion_alamana
+
+- story: distinctions_alamana
+  steps:
+  - intent: distinctions_alamana
+  - action: utter_distinctions_alamana
+
+- story: Gouvernance_alamana
+  steps:
+  - intent: Gouvernance_alamana
+  - action: utter_Gouvernance_alamana
+  - action: utter_Gouvernance_alamana_2
+
+- story: Conseil_Administration
+  steps:
+  - intent: Conseil_Administration
+  - action: utter_Conseil_Administration
+
+- story: membre_C_Administration
+  steps:
+  - intent: membre_C_Administration
+  - action: utter_membre_C_Administration
+
+- story: bureau_executif
+  steps:
+  - intent: bureau_executif
+  - action: utter_bureau_executif
+
+- story: membre_Bureau_executif 
+  steps:
+  - intent: membre_Bureau_executif 
+  - action: utter_membre_Bureau_executif 
+
+- story: membre_Comite_executif 
+  steps:
+  - intent: membre_Comite_executif
+  - action: utter_membre_Comite_executif
+
+
+
+- story: date_creation_alamana
+  steps:
+  - intent: question_date_creation
+  - action: utter_R_date_creation_alamana
+
+- story: reponse_offre_non_financiers_1
+  steps:
+  - intent: offre_non_F_1
+  - action: action_offre_non_financier
+
+- story: reponse_offre_non_financiers_2
+  steps:
+  - intent: offre_non_F_2
+  - action: action_offre_non_financier
+
+- story: reponse_offre_non_financiers_3
+  steps:
+  - intent: offre_non_F_3
+  - action: action_offre_non_financier
+
+- story: question_avoir_un_prêt
+  steps:
+  - intent: question_pour_avoir_montant_x
+  - action: utter_R_Q_pour_avoir_montant_x
+  - action: utter_list_O_F_lite
+
+
+- story: question_sur_adresse_siege
+  steps:
+  - intent: question_siege_centrale
+  - action: utter_R_adresse_siege
+
+- story: question__contact
+  steps:
+  - intent: question_contact
+  - action: utter_R_contact
+
+- story: question_montant_max
+  steps:
+  - intent: question_sur_montant
+  - action: utter_R_montant_max
+
+- story: question_nombre_offres
+  steps:
+  - intent: question_combient_offre
+  - action: utter_R_combient_offre
+
+
+
+
+- story: question_pour_simulation
+  steps:
+  - intent: question_pour_simulation
+  - action: utter_R_Q_simulation
+
+- story: question_chiffres_cle
+  steps:
+  - intent: chiffres_cles
+  - action: utter_R_Q_chiffres_cle
+  
+  ################### question a ajouter sur la forme

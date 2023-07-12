@@ -1,0 +1,449 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: bye
+  - action: utter_bye
+######################################  form de demande ##########################################
+- rule: Activate_form1_form
+  steps:
+  - intent: passe_une_demande
+  - action: utter_assistance
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: Submit_form1_form
+  condition:
+  - active_loop: form1_form
+  steps:
+  - action: form1_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_all_slots
+
+
+- rule: interactive_2_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: question_concernant_offre
+  - action: action_offre_souhaitez
+  - action: form1_form
+  - active_loop: form1_form
+  
+
+- rule: interactive_3_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: identite_alamana
+  - action: utter_identite_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_4_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: mission_alamana
+  - action: utter_mission_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_5_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: vision_alamana
+  - action: utter_vision_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_6_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: valeurs_alamana
+  - action: utter_valeurs_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_7_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: reseau_agences_alamana
+  - action: utter_reseau_agences_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_8_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: nombre_agences_alamana
+  - action: utter_nombre_agences_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_9_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: prix_distinctions_alamana
+  - action: utter_prix_distinctions_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_10_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: partenaires_alamana
+  - action: utter_partenaires_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_11_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: partenaires_alamana_2
+  - action: utter_partenaires_alamana_2
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_12_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: dates_cle_alamana
+  - action: utter_dates_cle_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_13_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: debuts_alamana
+  - action: utter_debuts_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_14_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: expansion_alamana
+  - action: utter_expansion_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_15_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: distinctions_alamana
+  - action: utter_distinctions_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_16_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: Gouvernance_alamana
+  - action: utter_Gouvernance_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_17_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: Conseil_Administration
+  - action: utter_Conseil_Administration
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_18_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: membre_C_Administration
+  - action: utter_membre_C_Administration
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_19_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: bureau_executif
+  - action: utter_bureau_executif
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_20_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: membre_Bureau_executif 
+  - action: utter_membre_Bureau_executif
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_21_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: question_sur_offre_generale
+  - action: utter_R_Q_offre_generale
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_22_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: offres_financiers
+  - action: utter_R_O_financier
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_23_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: offres_non_financiers
+  - action: utter_R_O_non_financier
+  - action: form1_form
+  - active_loop: form1_form
+
+
+
+- rule: interactive_25_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: question_concernant_offre
+  - action: action_offre_souhaitez
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_26_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: Q_sur_Condition
+  - action: action_condition_offre
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_27_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: Q_sur_utilisation
+  - action: action_utilisation_offre
+  - action: form1_form
+  - active_loop: form1_form
+  
+- rule: interactive_28_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: Q_sur_garanties
+  - action: action_garanties_offre
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_29_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: question_date_creation
+  - action: utter_R_date_creation_alamana
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_30_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: offre_non_F_1
+  - action: action_offre_non_financier
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_31_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: offre_non_F_2
+  - action: action_offre_non_financier
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_32_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: offre_non_F_3
+  - action: action_offre_non_financier
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_33_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: question_pour_avoir_montant_x
+  - action: utter_R_Q_pour_avoir_montant_x
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_34_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: question_siege_centrale
+  - action: utter_R_adresse_siege
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_35_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: question_contact
+  - action: utter_R_contact
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_36_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: question_sur_montant
+  - action: utter_R_montant_max
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_37_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: question_combient_offre
+  - action: utter_R_combient_offre
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_38_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: question_pour_simulation
+  - action: utter_R_Q_simulation
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: interactive_39_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: chiffres_cles
+  - action: utter_R_Q_chiffres_cle
+  - action: form1_form
+  - active_loop: form1_form
+
+- rule: stop_form1
+  condition:
+  - active_loop: form1_form
+  steps:
+  - intent: stop
+  - action: action_stop_form1
+  - action: action_reset_all_slots
+  - action: action_deactivate_loop
+  - active_loop: null
+####################################################################################################
+
+######################  cherche_agence ############################################
+- rule: Activate_cherche_agence
+  steps:
+  - or:
+      - intent: question_sur_adresse_agences
+      - intent: A_ville
+      - intent: A_quartier
+  - action: cherche_agence
+  - active_loop: cherche_agence
+
+- rule: Submit_cherche_agence
+  condition:
+  - active_loop: cherche_agence
+  steps:
+  - action: cherche_agence
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_reset_all_slots
+
+
+###################################################################################################
+###################################################################################################
+- rule: Activate_indentification_form
+  steps:
+  - intent: intenT1
+  - action: utter_confirametion_pour_demande
+  - action: indentification_form
+  - active_loop: indentification_form
+
+- rule: Submit_indentification_form
+  condition:
+  - active_loop: indentification_form
+  steps: 
+  - action: indentification_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit_indentification_form
+  - action: utter_indentification_form_slots
+
+- rule: interactive1_indentification_form
+  condition:
+  - active_loop: indentification_form
+  steps:
+  - intent: Q_sur_garanties
+    entities:
+    - offre_souhaitez: oto
+  - slot_was_set:
+    - offre_souhaitez: oto
+  - action: action_garanties_offre
+  - action: indentification_form
+  - active_loop: indentification_form
+
+- rule: interactive2_indentification_form
+  condition:
+  - active_loop: indentification_form
+  steps:
+  - intent: Q_sur_utilisation
+    entities:
+    - offre_souhaitez: oto
+  - slot_was_set:
+    - offre_souhaitez: oto
+  - action: action_utilisation_offre
+  - action: indentification_form
+  - active_loop: indentification_form
+
+
+
+
+
+#- rule: Say 'I am a bot' anytime the user challenges
+ # steps:
+  #- intent: bot_challenge
+  #- action: utter_iamabot

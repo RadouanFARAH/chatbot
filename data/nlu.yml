@@ -1,0 +1,2002 @@
+version: "3.1"
+nlu:
+- intent: salutation
+  examples: |
+    - Bonjour
+    - salut
+    - coco
+    - Coucou !
+    - slt
+    - cava
+    - bonsoir
+    - vous etez la?
+    - bjr
+    - bonjour mon ami
+    - Salam
+    - afin
+    - sat
+    - slt alamana
+    - bonjour alamana
+    - hello
+    - hii
+    
+- intent: Q_sur_garanties
+  examples: |
+    - quels sont les garanties que je doit fournir pour le crédit tamwill [moumtaz](offre_souhaitez)
+    - je veux savoir les garanties de tamwill [moumtaz](offre_souhaitez)
+    - pour les garanties que je doit fourni pour tamwill [moumtaz](offre_souhaitez) ?
+    - pouvez vous me donner les garanties pour tamwill [moumtaz](offre_souhaitez)
+    - pour bénificier de tamwill [moumtaz](offre_souhaitez) je doit presenter quoi comme garantie
+    - pour bénificier de tamwill [oto](offre_souhaitez) je doit presenter quoi comme garantie
+    - pour bénificier de tamwill [tanmiya](offre_souhaitez) je doit presenter quoi comme garantie
+    - pour bénificier de tamwill [milkia](offre_souhaitez) je doit presenter quoi comme garantie
+    - c'est quoi les garanties pour tamwill [moumtaz](offre_souhaitez)
+    - les garanties de tamwill [moumtaz](offre_souhaitez)
+    - que je doit presenter pour avoir le credit [moumtaz](offre_souhaitez)
+    - je doit presenter quoi pour le credit [moumtaz](offre_souhaitez)
+    - les granties que vous exige pour le credit tamwill [moumtaz](offre_souhaitez)
+    - les granties que vous exige pour le credit [moumtaz](offre_souhaitez)
+    - quels sont les garanties que je doit fournir pour le crédit tamwill [oto](offre_souhaitez)
+    - je veux savoir les garanties de tamwill [oto](offre_souhaitez)
+    - pour les garanties que je doit fourni pour tamwill [oto](offre_souhaitez) ?
+    - pouvez vous me donner les garanties pour tamwill [oto](offre_souhaitez)
+    - c'est quoi les garanties pour tamwill [oto](offre_souhaitez)
+    - les garanties de tamwill [oto](offre_souhaitez)
+    - que je doit presenter pour avoir le credit [oto](offre_souhaitez)
+    - je doit presenter quoi pour le credit [oto](offre_souhaitez)
+    - les granties que vous exige pour le credit tamwill [oto](offre_souhaitez)
+    - les granties que vous exige pour le credit [oto](offre_souhaitez)
+    - quels sont les garanties que je doit fournir pour le crédit tamwill [milkia](offre_souhaitez)
+    - je veux savoir les garanties de tamwill [milkia](offre_souhaitez)
+    - pour les garanties que je doit fourni pour tamwill [milkia](offre_souhaitez) ?
+    - pouvez vous me donner les garanties pour tamwill [milkia](offre_souhaitez)
+    - c'est quoi les garanties pour tamwill [milkia](offre_souhaitez)
+    - les garanties de tamwill [milkia](offre_souhaitez)
+    - que je doit presenter pour avoir le credit [milkia](offre_souhaitez)
+    - je doit presenter quoi pour le credit [milkia](offre_souhaitez)
+    - les granties que vous exige pour le credit tamwill [milkia](offre_souhaitez)
+    - les granties que vous exige pour le credit [milkia](offre_souhaitez)
+    - quels sont les garanties que je doit fournir pour le crédit tamwill [tanmiya](offre_souhaitez)
+    - je veux savoir les garanties de tamwill [tanmiya](offre_souhaitez)
+    - pour les garanties que je doit fourni pour tamwill [tanmiya](offre_souhaitez) ?
+    - pouvez vous me donner les garanties pour tamwill [tanmiya](offre_souhaitez)
+    - c'est quoi les garanties pour tamwill [tanmiya](offre_souhaitez)
+    - les garanties de tamwill [tanmiya](offre_souhaitez)
+    - que je doit presenter pour avoir le credit [tanmiya](offre_souhaitez)
+    - je doit presenter quoi pour le credit [tanmiya](offre_souhaitez)
+    - les granties que vous exige pour le credit tamwill [tanmiya](offre_souhaitez)
+    - les granties que vous exige pour le credit [tanmiya](offre_souhaitez)
+    - donne moi les garanties de [moumtaz](offre_souhaitez)
+    - je veux savoir les garanties demander pour [oto](offre_souhaitez)
+    - quels sont les garanties que je doit fournir pour le crédit [PS](offre_souhaitez)
+    - je veux savoir les garanties de [PS](offre_souhaitez)
+    - pour les garanties que je doit fourni pour [ps](offre_souhaitez) ?
+    - pouvez vous me donner les garanties pour [ps](offre_souhaitez)
+    - c'est quoi les garanties pour [pret solidaire](offre_souhaitez)
+    - les garanties de [pret solidaire](offre_souhaitez)
+    - que je doit presenter pour avoir le credit [pret solidaire](offre_souhaitez)
+    - je doit presenter quoi pour le credit [pret solidaire](offre_souhaitez)
+    - les granties que vous exige pour le credit [pret solidaire](offre_souhaitez)
+    - donne moi les garanties de [ps](offre_souhaitez)
+    - je veux savoir les garanties demander pour [PS](offre_souhaitez)
+    - quels sont les garanties que je doit fournir pour le crédit [PIE](offre_souhaitez)
+    - je veux savoir les garanties de [PIE](offre_souhaitez)
+    - pour les garanties que je doit fourni pour [pie](offre_souhaitez) ?
+    - pouvez vous me donner les garanties pour [pie](offre_souhaitez)
+    - c'est quoi les garanties pour [PRET INDIVIDUEL A ENTREPRISE](offre_souhaitez)
+    - les garanties de [PRET INDIVIDUEL A ENTREPRISE](offre_souhaitez)
+    - que je doit presenter pour avoir le credit [pret individuel a entreprise](offre_souhaitez)
+    - je doit presenter quoi pour le credit [pret individuel a entreprise](offre_souhaitez)
+    - les granties que vous exige pour le credit [pret individuel a entreprise](offre_souhaitez)
+    - les granties que vous exige pour le credit [pret individuel entreprise](offre_souhaitez)
+    - donne moi les garanties de [pret individuel entreprise](offre_souhaitez)
+    - je veux savoir les garanties demander pour [PRET INDIVIDUEL ENTREPRISE](offre_souhaitez)
+    - quels sont les garanties que je doit fournir pour le crédit [PIL](offre_souhaitez)
+    - je veux savoir les garanties de [PIL](offre_souhaitez)
+    - pour les garanties que je doit fourni pour [pil](offre_souhaitez) ?
+    - pouvez vous me donner les garanties pour [pil](offre_souhaitez)
+    - c'est quoi les garanties pour [PRÊT INDIVIDUEL AU LOGEMENT](offre_souhaitez)
+    - les garanties de [PRÊT INDIVIDUEL AU LOGEMENT](offre_souhaitez)
+    - que je doit presenter pour avoir le credit [pret individuel au logement](offre_souhaitez)
+    - je doit presenter quoi pour le credit [pret individuel au logement](offre_souhaitez)
+    - les granties que vous exige pour le credit [pret individuel au logement](offre_souhaitez)
+    - les granties que vous exige pour le credit [pret individuel logement](offre_souhaitez)
+    - donne moi les garanties de [pret individuel logement](offre_souhaitez)
+    - je veux savoir les garanties demander pour [PRET INDIVIDUEL LOGEMENT](offre_souhaitez)
+- intent: Q_sur_garanties_2
+  examples: |
+    - que je doit fournir comme garanties pour cette offre
+    - et pour les garanties ?
+    - amana exige quoi comme garanties
+    - je veux savoir aussi les garanties que je doit dispose
+    - quels sont les garanties que je doit dispose pour avoir cette offre ?
+    - donne les garanties que je doit dispose
+    - pouvez vous me donner les garanties que je doit dispose pour cette offre
+    - alors pour les garanties ?
+    - les garanties ?
+    - je doit presente quoi comme garanties ?
+    - pour bénificier de cette offre je doit avoir quoi comme garanties
+    - quels sont les garanties que je doit dispose pour avoir ce crédit ?
+- intent: Q_sur_Condtion_2
+  examples: |
+    - donne moi les conditions de cette offre
+    - quels sont les conditions de cette offre ?
+    - pouvez vous de me parler des conditions de cette offre
+    - je veux voir aussi les conditions de avoir ce credit
+    - indiquer moi les conditions de cette offre
+    - les conditions svp
+    - je veux voir aussi les conditions
+    - pouvez vous me donner les conditions aussi
+    - et pour les conditions de cette offre
+- intent: Q_sur_utilisation
+  examples: |
+    - quel sont les utilisations de tamwill [moumtaz](offre_souhaitez)
+    - les utilisations de tamwill [moumtaz](offre_souhaitez)
+    - pouvez vous me donne les utilisations de tamwill [moumtaz](offre_souhaitez)
+    - tamwill [moumtaz](offre_souhaitez) les utilisations
+    - je veux voir les utilisations de tamwill [moumtaz](offre_souhaitez)
+    - quel sont les utilisations de tamwill [milkia](offre_souhaitez)
+    - les utilisations de tamwill [milkia](offre_souhaitez)
+    - pouvez vous me donne les utilisations de tamwill [milkia](offre_souhaitez)
+    - tamwill [milkia](offre_souhaitez) les utilisations
+    - je veux voir les utilisations de tamwill [milkia](offre_souhaitez)
+    - quel sont les utilisations de tamwill [oto](offre_souhaitez)
+    - les utilisations de tamwill [oto](offre_souhaitez)
+    - pouvez vous me donne les utilisations de tamwill [oto](offre_souhaitez)
+    - tamwill [oto](offre_souhaitez) les utilisations
+    - je veux voir les utilisations de tamwill [oto](offre_souhaitez)
+    - quel sont les utilisations de tamwill [tanmiya](offre_souhaitez)
+    - les utilisations de tamwill [tanmiya](offre_souhaitez)
+    - pouvez vous me donne les utilisations de tamwill [tanmiya](offre_souhaitez)
+    - tamwill [tanmiya](offre_souhaitez) les utilisations
+    - je veux voir les utilisations de tamwill [tanmiya](offre_souhaitez)
+    - donne moi les utlisations de tamwill [moumtaz](offre_souhaitez)
+    - quel sont les utilisations de [PS](offre_souhaitez)
+    - les utilisations de tamwill [ps](offre_souhaitez)
+    - pouvez vous me donne les utilisations de[pret solidaire](offre_souhaitez)
+    - [PRET SOLIDAIRE](offre_souhaitez) les utilisations
+    - je veux voir les utilisations de [PRET SOLIDAIRE](offre_souhaitez)
+    - donne moi les utlisations de [ps](offre_souhaitez)
+    - donne moi les utlisations de [pret solidaire](offre_souhaitez)
+    - quel sont les utilisations de [PIE](offre_souhaitez)
+    - les utilisations de tamwill [pie](offre_souhaitez)
+    - pouvez vous me donne les utilisations de [PRET INDIVIDUEL À L'ENTREPRISE](offre_souhaitez)
+    - [PRET INDIVIDUEL ENTREPRISE](offre_souhaitez) les utilisations
+    - je veux voir les utilisations de [pret individuel à l'entreprise](offre_souhaitez)
+    - donne moi les utlisations de [pret individuel entreprise](offre_souhaitez)
+    - donne moi les utlisations de [pie](offre_souhaitez)
+    - quel sont les utilisations de [PIL](offre_souhaitez)
+    - les utilisations de tamwill [pil](offre_souhaitez)
+    - pouvez vous me donne les utilisations de [PRET INDIVIDUEL AU LOGEMENT](offre_souhaitez)
+    - [PRET INDIVIDUEL LOGEMENT](offre_souhaitez) les utilisations
+    - je veux voir les utilisations de [pret individuel au logement](offre_souhaitez)
+    - donne moi les utlisations de [pret individuel logement](offre_souhaitez)
+    - donne moi les utlisations de [pil](offre_souhaitez)
+- intent: Q_sur_utilisation_2
+  examples: |
+    - quel sont les utilisations de cette offre ?
+    - donne moi les utlisations de cette offre
+    - alors pour les utilisation de cette offre
+    - les utilisation
+    - a quoi est destiner cette offre
+    - je peux utliser ce credit sur quoi ?
+    - sur quoi je peux utiliser cette offre ?
+    - quel sont les utilisation de cette offre
+    - quel sont les utlisations de cette offre
+    - les utilisations de cette offre
+- intent: bye
+  examples: |
+    - au revoir!
+    - tchaw tchaw!
+    - bonne journée
+    - bonne soirée!
+    - à bientôt
+    - au revoir
+    - je te laisse maintenant!
+    - merci
+- intent: question_sur_offre_generale
+  examples: |
+    - pouvez-vous de me parler de vos offres?
+    - donne moi une idée sur les offres que vous avez
+    - quils sont les offres que vous proposez?
+    - j'ai entendu que vous avez pas male d'offres
+    - donne moi une brêve discription concernant vos offres?
+    - donne moi les offres que vous avez chez alamana
+    - quels sont les offres que vous proposez ?
+    - donne moi les offres que vous avez
+    - quel sont les offres que vous avez
+    - les offres que vous avez chez alamana
+    - je veux savoir les offres que vous avez
+- intent: offres_financiers
+  examples: |
+    - je veux savoir vos offres financiers
+    - les offres financiers
+    - plus de details sur les offres et les services financiers
+    - les services financiers?
+    - donne moi vos offres financiers
+    - donne moi  vos services financiers
+    - les offres financiers que vous avez chez alamana
+    - les types de crédit que vous avez
+    - les offres de crédit que vous avez
+    - je veux connaitre les offres financiers
+    - je veux connaitre les services financiers
+    - de quoi s'agit il les offres financiers
+- intent: offres_non_financiers
+  examples: |
+    - je veux savoir vos offres non financiers
+    - les offres non financiers
+    - plus de details sur les offres et les services noon financiers
+    - les services non financiers?
+    - donne moi vos offres non financiers
+    - donne moi  vos services non financiers
+    - les offres non financiers que vous avez chez alamana
+    - je veux connaitre les offres non financiers
+    - je veux connaitre les services non financiers
+    - de quoi s'agit il les offres non financiers
+- intent: affirmation
+  examples: |
+    - oui !
+    - ouii
+    - ouui
+    - ok
+    - d'accord
+    - oui
+    - bien sur
+    - oui j'ai 6 mois de travail
+    - bien sur que j'ai 6 mois de travail
+    - j'ai plus de 6 moi de travail
+    - j'ai de revenu
+    - oui je suis sûr
+    - oui j'ai une source d'argent
+    - bien sur j'ai plus que 6 mois
+    - OUI
+    - je confirme ma demande
+    - oui c'est confirmer
+    - merci de confirmer
+- intent: inffirmation
+  examples: |
+    - non je veux pas !
+    - non
+    - nnn
+    - j'avais pas de revenu
+    - non merci
+    - je veux pas
+    - pas maintenant
+    - plus tard
+    - non j'ai moins de 6 mois de travaille
+    - non j'avais pas 6 mois de travaille
+    - on laisse pour apres
+    - non je veux pas
+    - non aucun de ca
+    - je dispose pas de ca
+    - aucune de ces justifications
+    - non je dispose pas d'une source
+    - malheuressemnet non
+    - non aucune de ca
+    - non je n'ai pas d'un autre revenu
+    - Non, je ne dispose pas d'une autre source de revenu.
+    - Je ne gagne de l'argent d'aucune autre façon
+    - Je n'ai pas d'autres revenus que celui-ci.
+    - Je ne tire pas de revenus supplémentaires.
+    - Mon unique source de revenu est celle-ci.
+    - pas de autre revenu
+    - je gangne rien de plus
+    - je ne confirme pas
+    - non annuler
+    - pas de confirmation
+    - j'ai moins de 6 mois
+    - je suis au chomage maintenant
+    - non je ne confirme pas
+    - pas de confirmation
+    - non je veux pas
+    - passe
+    - je n'ai pas de nom pour mon entreprise
+    - pas de nom pour mon entreprise
+    - passe ca 
+    - suivant
+    - je ne possede pas d'un local commerciale
+    - je ne possede pas d'un local
+    - pas de locale
+    - non je ne possede pas d'un locale
+    - malheuresement pas de locale
+    - non je n'ai pas de locale commerciale
+    - non je n'ai pas de locale 
+    - pas de logement
+    - j'ai pas mon logement
+    - pas de logement
+    - je ne possede pas de logement
+    - malheuressement pas de logement
+    
+- intent: Q_sur_Condition
+  examples: |
+    - donne moi plus de details concernant les conditions de tamwill [moumtaz](offre_souhaitez)
+    - pour les conditions de tamwil [moumtaz](offre_souhaitez)
+    - donne moi les condition pour a voir tamwill [moumtaz](offre_souhaitez)
+    - explique moi les condition tamwill [moumtaz](offre_souhaitez)
+    - pour avoir tamwill [moumtaz](offre_souhaitez) quels sont les conditions
+    - condtions de tamwil[moumtaz](offre_souhaitez)
+    - donne moi les condition pour a voir tamwill [milkia](offre_souhaitez)
+    - explique moi les condition tamwill [milkia](offre_souhaitez)
+    - pour avoir tamwill [milkia](offre_souhaitez) quels sont les conditions
+    - condtions de tamwil [milkia](offre_souhaitez)
+    - donne moi plus de details concernant les conditions de tamwill [oto](offre_souhaitez)
+    - pour les conditions de tamwil [oto](offre_souhaitez)
+    - donne moi les condition pour a voir tamwill [oto](offre_souhaitez)
+    - explique moi les condition tamwill [oto](offre_souhaitez)
+    - pour les conditions de tamwil [tanmiya](offre_souhaitez)
+    - donne moi les condition pour a voir tamwill [tanmiya](offre_souhaitez)
+    - explique moi les condition tamwill [tanmiya](offre_souhaitez)
+    - pour avoir tamwill [tanmiya](offre_souhaitez) quels sont les conditions
+    - condtions de tamwill [tanmiya](offre_souhaitez)
+    - les conditions de tamwill [moumtaz](offre_souhaitez) svp
+    - maintenant donne moi les conditions de tamwill [tanmiya](offre_souhaitez)
+    - explique moi les condition [ps](offre_souhaitez)
+    - pour les conditions de [PS](offre_souhaitez)
+    - donne moi les condition pour a voir [PRET SOLIDAIRE](offre_souhaitez)
+    - explique moi les condition [pret solidaire](offre_souhaitez)
+    - pour avoir [PS](offre_souhaitez) quels sont les conditions
+    - condtions de [PRET SOLIDAIRE](offre_souhaitez)
+    - les conditions de [ps](offre_souhaitez) svp
+    - maintenant donne moi les conditions de [PS](offre_souhaitez)
+    - explique moi les condition [pie](offre_souhaitez)
+    - pour les conditions de [PIE](offre_souhaitez)
+    - donne moi les condition pour a voir [PRET INDIVIDUEL À L'ENTREPRISE](offre_souhaitez)
+    - explique moi les condition [PRET INDIVIDUEL ENTREPRISE](offre_souhaitez)
+    - pour avoir [pret individuel a l'entreprise](offre_souhaitez) quels sont les conditions
+    - condtions de [pret individuel entreprise](offre_souhaitez)
+    - les conditions de [pie](offre_souhaitez) svp
+    - maintenant donne moi les conditions de [PIE](offre_souhaitez)
+    - explique moi les condition [pil](offre_souhaitez)
+    - pour les conditions de [PIL](offre_souhaitez)
+    - donne moi les condition pour a voir [PRET INDIVIDUEL AU LOGEMENT](offre_souhaitez)
+    - explique moi les condition [PRET INDIVIDUEL LOGEMENT](offre_souhaitez)
+    - pour avoir [pret individuel au logement](offre_souhaitez) quels sont les conditions
+    - condtions de [pret individuel logement](offre_souhaitez)
+    - les conditions de [pil](offre_souhaitez) svp
+    - maintenant donne moi les conditions de [PIL](offre_souhaitez)
+- intent: question_concernant_offre
+  examples: |
+    - parle moi de tamwill [moumtaz](offre_souhaitez)
+    - c'est quoi tamwill [moumtaz](offre_souhaitez)
+    - plus de details concernant tamwill [moumtaz](offre_souhaitez) svp
+    - tamwill [moumtaz](offre_souhaitez)
+    - pouvez vous me donner plus de details concernant tamwill [moumtaz](offre_souhaitez)
+    - tamwill [moumtaz](offre_souhaitez) s'il vous plaît
+    - tamwill [moumtaz](offre_souhaitez) svp
+    - je veux avoir plus de details sur tamwill [moumtaz](offre_souhaitez)
+    - l'offre qui me concernalt plus c'est tamwill [moumtaz](offre_souhaitez)
+    - parle moi de tamwill [milkia](offre_souhaitez)
+    - plus de details concernant tamwill [milkia](offre_souhaitez) svp
+    - tamwill [milkia](offre_souhaitez)
+    - pouvez vous me donner plus de details concernant tamwill [milkia](offre_souhaitez)
+    - c'est quoi tamwill [milkia](offre_souhaitez)
+    - tamwill [milkia](offre_souhaitez) s'il vous plaît
+    - tamwill [milkia](offre_souhaitez) svp
+    - je veux avoir plus de details sur tamwill [milkia](offre_souhaitez)
+    - l'offre qui me concernalt plus c'est tamwill [milkia](offre_souhaitez)
+    - tamwill [oto](offre_souhaitez) s'il vous plaît
+    - tamwill [oto](offre_souhaitez) svp
+    - c'est quoi tamwill [oto](offre_souhaitez)
+    - je veux avoir plus de details sur tamwill [oto](offre_souhaitez)
+    - l'offre qui me concernalt plus c'est tamwill [oto](offre_souhaitez)
+    - tamwill [tanmiya](offre_souhaitez) s'il vous plaît
+    - tamwill [tanmiya](offre_souhaitez) svp
+    - c'est quoi tamwill [tanmiya]{"entity":"offre_souhaitez","value":"tanmiya"
+    - je veux avoir plus de details sur tamwill [tanmiya](offre_souhaitez)
+    - l'offre qui me concernalt plus c'est tamwill [tanmiya](offre_souhaitez)
+    - alors c'est quoi tamwill [OTO](offre_souhaitez)
+    - alors donne moi les details de tamwill [tanmiya](offre_souhaitez)
+    - alors c'est quoi tamwill [oto](offre_souhaitez)
+    - alors je suis interessé par tamwill [oto](offre_souhaitez)
+    - et pour tamwill [tanmiya](offre_souhaitez)
+    - donne moi les details sur tamwill [oto](offre_souhaitez)
+    - tamwill [oto](offre_souhaitez)
+    - alors c'est quoi offre [pie](offre_souhaitez)
+    - alors donne moi les details de offre [pie](offre_souhaitez)
+    - alors c'est quoi [PIE](offre_souhaitez)
+    - alors je suis interessé par offre [pie](offre_souhaitez)
+    - et pour offre [PIE](offre_souhaitez)
+    - donne moi les details sur offre [pie](offre_souhaitez)
+    - offre [pie](offre_souhaitez)
+    - je veux choisir offre [pie](offre_souhaitez)
+    - mon choix c'est [PIE](offre_souhaitez)
+    - alors c'est quoi offre [pil](offre_souhaitez)
+    - alors donne moi les details de offre [pil](offre_souhaitez)
+    - alors c'est quoi [pil](offre_souhaitez)
+    - alors je suis interessé par offre [PIL](offre_souhaitez)
+    - et pour offre [pil](offre_souhaitez)
+    - donne moi les details sur offre [pil](offre_souhaitez)
+    - offre [pil](offre_souhaitez)
+    - je veux choisir offre [pil](offre_souhaitez)
+    - mon choix c'est [PIL](offre_souhaitez)
+    - alors c'est quoi offre [ps](offre_souhaitez)
+    - alors donne moi les details de offre [ps](offre_souhaitez)
+    - alors c'est quoi [PS](offre_souhaitez)
+    - alors je suis interessé par offre [ps](offre_souhaitez)
+    - et pour offre [ps](offre_souhaitez)
+    - donne moi les details sur offre [ps](offre_souhaitez)
+    - offre [PS](offre_souhaitez)
+    - je veux choisir offre [ps](offre_souhaitez)
+    - mon choix c'est [PS](offre_souhaitez)
+    - alors c'est quoi offre [pret solidaire](offre_souhaitez)
+    - alors donne moi les details de offre [pret solidaire](offre_souhaitez)
+    - alors c'est quoi [PRET SOLIDAIRE](offre_souhaitez)
+    - alors je suis interessé par offre [pret solidaire](offre_souhaitez)
+    - et pour offre [pret solidaire](offre_souhaitez)
+    - offre [PRET SOLIDAIRE](offre_souhaitez)
+    - je veux choisir offre [pret solidaire](offre_souhaitez)
+    - mon choix c'est [PRET SOLIDAIRE](offre_souhaitez)
+    - alors c'est quoi offre [PRET INDIVIDUEL ENTREPRISE](offre_souhaitez)
+    - alors donne moi les details de offre [PRET INDIVIDUEL À L'ENTREPRISE](offre_souhaitez)
+    - alors c'est quoi [PRET INDIVIDUEL ENTREPRISE](offre_souhaitez)
+    - alors je suis interessé par offre [PRET INDIVIDUEL À L'ENTREPRISE](offre_souhaitez)
+    - et pour offre [pret individuel entreprise](offre_souhaitez)
+    - donne moi les details sur offre [pret individuel entreprise](offre_souhaitez)
+    - offre [pret individuel entreprise](offre_souhaitez)
+    - je veux choisir offre [pret individuel à l'entreprise](offre_souhaitez)
+    - mon choix c'est [pret individuel à l'entreprise](offre_souhaitez)
+    - alors c'est quoi offre [PRET INDIVIDUEL AU LOGEMENT](offre_souhaitez)
+    - alors donne moi les details de offre [PRET INDIVIDUEL AU LOGEMENT](offre_souhaitez)
+    - alors c'est quoi [PRET INDIVIDUEL AU LOGEMENT](offre_souhaitez)
+    - alors je suis interessé par offre [PRET INDIVIDUEL LOGEMENT](offre_souhaitez)
+    - et pour offre [PRET INDIVIDUEL LOGEMENT](offre_souhaitez)
+    - donne moi les details sur offre [pret individuel logement](offre_souhaitez)
+    - offre [pret individuel logement](offre_souhaitez)
+    - je veux choisir offre [pret individuel au logement](offre_souhaitez)
+    - mon choix c'est [pret individuel au logement](offre_souhaitez)
+- intent: passe_une_demande
+  examples: |
+    - demande de credit svp
+    - je veux prendre un credit
+    - je veux passe une demande svp
+    - est ce que je peux passe une demande maintenant ?
+    - alors je veux faire une demande de credit
+    - fait moi une demande s'il vous plait
+    - pouvez vous me passe une demande
+    - je faire une demande de credit si c'est possible
+    - lancer une demande pour moi
+    - je veux passe une demande
+    - faire une demande pour moi
+    - bonjour je veux faire une demande chez vous
+    - pouvez vous me passe une demande chez vous
+    - je veux faire une demande
+    - je veux faire une demande svp
+    - je veux refaire une demande
+    - faire une demande pour moi
+    - faire une demande pour moi s'il vous palit
+    - je faire une demande
+    - je veux recommencer la demande
+    - je veux refaire la demande
+    - restart la demande
+
+
+- intent: offre_non_F_1
+  examples: |
+    - plus de details sur ACCOMPAGNEMENT ET FORMATION
+    - plus de details sur ACCOMPAGNEMENT FORMATION
+    - plus de details sur accompagnement et formation
+    - plus de details sur accompagnement formation
+    - parle moi de accompagnement et formation
+    - c'est quoi accompagnement et formation
+    - offre de accompagnement et formation
+    - pouvez vous indiquer c'est quoi accompagnement et formation
+    - je veux des details sur accompagnement et formation
+    - explique moi accompagnement et formation
+    - explique l'offre accompagnement et formation
+
+- intent: offre_non_F_2
+  examples: |
+    - plus de details sur APPUI À LA COMMERCIALISATION
+    - plus de details sur APPUI COMMERCIALISATION
+    - plus de details sur appui à la commercialisation
+    - plus de details sur appui commercialisation
+    - appui à la commercialisation
+    - parle moi de appui à la commercialisation
+    - c'est quoi appui à la commercialisation
+    - offre de appui à la commercialisation
+    - pouvez vous indiquer c'est quoi appui à la commercialisation
+    - je veux des details sur appui à la commercialisation
+    - explique moi appui à la commercialisation
+    - explique l'offre appui à la commercialisation
+
+- intent: offre_non_F_3
+  examples: |
+    - plus de details sur PARTICIPEZ AUX CONCOURS
+    - plus de details sur PARTICIPEZ CONCOURS
+    - plus de details sur participez aux concours
+    - plus de details sur participez concours
+    - participez aux concours
+    - parle moi de participez aux concours
+    - c'est quoi participez aux concours
+    - offre de participez aux concours
+    - pouvez vous indiquer c'est quoi participez aux concours
+    - je veux des details sur participez aux concours
+    - explique moi participez aux concours
+    - explique l'offre participez aux concours
+    - je veux voir l'offre participez aux concours
+    
+- intent: question_pour_avoir_montant_x
+  examples: |
+    - est ce que je peux avoir un montant de 10000 dh
+    - vous pouvez me donner un pret de 20000 dh
+    - je peux avoir un credit pour developper mon entreprise ?
+    - est ce que je peux avoir une credit chez vous
+    - je veux un montant de 30000 dh, vous pouvez me donner ce montant
+    - est ce que je peux avoir un credit pour achetez un logement
+    - je veux crée mon propre entreprise, pouvez vous me donner un credit
+    - je veux commencer mon propre entreprise pouvez vous m'aider
+    - j'ai une idée de crée mon propre entreprise, je peux avoir un crédit chez vous
+    - je peux avoir un prêt chez vous
+    - je peux avoir un crédit chez vous
+    - je peux avoir un pret chez vous
+    - est ce que je peux avoir une credit
+    - si je veux avoir un pret chez vous comment faire
+
+- intent: question_siege_centrale
+  examples: |
+    - ou ce trouve votre siège
+    - ou ce trouve le siège centrale
+    - donne moi l'adresse de votre siège
+    - ce savoir l'adresse exacte de votre siege
+    - ou ce trouve le siege d'alamana
+    - je veux adresse du siege alamana
+    - pouvez me donner l'adresse de votre siege centrale
+    - alors donne moi l'adresse de votre siège 
+
+- intent: question_contact
+  examples: |
+    - donne moi votre contact
+    - si je veux vous contacter comment faire
+    - donne moi votre numero de telephone
+    - je veux voir votre contact
+    - comment faire pour vous contactez
+    - donne moi un numero de fax ou de telephone
+    - comment peux-je faire pour vous contacter
+    - je veux un moyenne pour vous contacter
+
+- intent: locataire 
+  examples: |
+    - je suis locataire de mon mogement
+    - locataire
+    - LOCATAIRE
+    - juste locataire
+    - maintenant locataire de mon logement
+    - je suis locataire de mon locale commerciale
+    - locataire de mon locale commerciale
+    - je suis juste locataire de mon logement
+    - je suis juste locataire de mon locale commerciale
+    - locataire de mon logement
+
+- intent: proprietaire
+  examples: |
+    - je suis proprietaire de mon mogement
+    - proprietaire
+    - PROPRIETAIRE
+    - juste proprietaire
+    - maintenant proprietaire de mon logement
+    - je suis proprietaire de mon locale commerciale
+    - proprietaire de mon locale commerciale
+    - je suis juste proprietaire de mon logement
+    - je suis juste proprietaire de mon locale commerciale
+    - proprietaire de mon logement
+
+- intent: stop
+  examples: |
+    - stop la demande
+    - je veux pas complèter la demande
+    - arrête la demande
+    - je pense que je veux arrête la demande
+    - stope
+    - stopp
+    - annuler la demande
+    - cancel
+    - annuler
+    - anuuler
+    - je veux stoper la demande
+    - je veux arrêter la demande
+    - non je veux arreter la demande
+    - je veux arrete la demande
+    - je veux annuler la demande
+    - stop
+- intent: chiffre
+  examples: |
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 0
+    - 11
+    - 12
+    - 13
+- intent: cin
+  examples: |
+    - CB324043
+    - Z324576
+    - te876543
+- intent: montant
+  examples: |
+    - 10000 dhs
+    - 234678.54 dh
+    - 10000dhs
+    - 234678.54dh
+    - 10000 dirhames
+    - 234678.54 dirhame
+    - 150000
+    - 1000 dh
+    - 23769.54dhs
+- intent: adresse
+  examples: |
+    - hay atlass fes
+    - bensouda fes
+    - agdal rabat
+    - riad rabat
+- intent: date_naissance
+  examples: |
+    - 18-07-1999
+    - 22-54-2000
+    - 02-08-1987
+- intent: forme_juridique
+  examples: |
+    - Société en nom collectif
+    - Société en commandite simple
+    - Association ou sté en participation
+    - Société anonyme
+    - Société en commandite par action
+    - Société à responsabilté limitée
+    - S.A.R.L. d'associé unique
+    - Société coopérative
+    - Société civile
+    - Société de fait
+    - Entrepreneur individuel
+- intent: prenom
+  examples: |
+    - marwane
+- intent: nom
+  examples: |
+    - fassih
+- intent: condition_1
+  examples: |
+    - registre de commerce
+    - j'ai un registre commerce
+    - Mon entreprise est enregistrée au registre du commerce.
+    - J'ai effectué une inscription au registre du commerce
+    - Le registre du commerce a enregistré mon entreprise
+    - je suis enregister au registre commerce
+    - je dispose d'un registre commerce
+    - premiere condition
+    - condition numero 1
+    - condition numero un
+    - j'ai un registre de commerce
+    - j'ai une societe
+    - societe
+    
+- intent: condition_2
+  examples: |
+    - je dispose d'un statut d'auto-entrepreneur
+    - J'ai obtenu le statut d'auto-entrepreneur
+    - Mon statut est celui d'auto-entrepreneur.
+    - j'exerce mon activité en tant qu'auto-entrepreneur.
+    - J'ai enregistré en tant qu'auto-entrepreneur
+    - deuxieme condition
+    - condition numero 2
+    - condition numero deux
+- intent: condition_3
+  examples: |
+    - je suis assujetti à la taxe professionnelle (patente)
+    - je suis assujetti à la patente
+    - j'ai une patente
+    - patente
+    - condition 3
+    - j'ai la condition trois
+    - condition numero 3
+    - condition numero trois
+- intent: condition_4
+  examples: |
+    - je suis inscrit dans l'un des registres professionnels gérés par des instances gouvernementales ou des instances indépendantes reconnues par les autorités
+    - je suis inscrit dans l'un des registres professionnels gérés par des instances gouvernementales
+    - je suis inscrit à des instances indépendantes reconnues par les autorités
+    - condtion quatre
+    - j'ai la condition 4
+    - condition numero 4
+    - condition numero quatre
+- intent: condition_5
+  examples: |
+    - J'ai obtenu une autorisation d'exercer  auprès d'une autorité gouvernementale
+    - J'ai obtenu un agrément professionnel auprès d'une autorité gouvernementale
+    - Une autorité gouvernementale m'a accordé une autorisation d'exercer
+    - condition cinq
+    - condition numero 5
+    - condition numero cinq
+    - cinq
+- intent: condition_6
+  examples: |
+    - je suis une personne morale (société)
+    - je represente une société
+    - je represente une entreprise
+    - condition 6
+    - condition nemuro six
+    - je suis dans la sixieme condition
+- intent: condition_7
+  examples: |
+    - je suis un Salarié
+    - je suis un Fonctionnaire
+    - je suis un Bailleur
+    - je suis un Rentier
+- intent: condition_8
+  examples: |
+    - je suis un particulier ne possédant aucune des conditions cités
+    - je ne possede aucune des conditions cités
+    - aucune de ces conditions
+    - condition 8
+    - condition huite
+
+- intent: contrat_type_1
+  examples: |
+    - je veux creer la demande sous mon nom
+    - sous mon nom svp
+    - je veux utiliser mon nom
+    - la demande sous mon nom
+    - mon nom
+    - nom
+    - moi même
+
+- intent: contrat_type_2
+  examples: |
+    - je veux creer la demande sous le nom d'entreprise
+    - sous le nom de mon entreprise
+    - je veux utiliser le nom de l'entreprise
+    - la demande sous le nom de l'entreprise
+    - mon entreprise
+    - le nom d'entreprise
+    - utiliser mon entreprise
+    - l'entreprise
+- intent: garantie_1
+  examples: |
+    - je dispose de la premiere garantie
+    - premiere garantie
+    - je veux choisir la premiere garantie
+    - Nantissement de Fond de commerce 
+    - j'ai le nantissement de fond de commerce 
+    - Nantissement de Fond de commerce 
+    - je choisi nantissement de Fond de commerce 
+    - Fond de commerce
+    - j'ai fond de commerce
+    - je choisi le Fond de commerce
+- intent: garantie_2
+  examples: |
+    - je dispose de la deuxieme garantie
+    - deuxieme garantie
+    - je veux choisir la deuxieme garantie
+    - j'ai un contrat d'hypothèque
+    - Contrat hypothèque
+    - Contrat d'hypothèque
+    - j'ai le Contrat hypothèque
+    - j'ai une contrat hypothèque
+- intent: garantie_1_L
+  examples: |
+    - Reconnaissance de dette 
+    - j'ai la Reconnaissance de dette
+    - je choisi Reconnaissance de dette 
+    - j'ai fond la Reconnaissance de dette
+    - je choisi la Reconnaissance de dette
+
+- intent: garantie_2_L
+  examples: |
+    - Contrat de nantissement des biens
+    - j'ai la Contrat de nantissement des biens
+    - je choisi Contrat de nantissement des biens 
+    - j'ai fond le Contrat de nantissement des biens
+    - je choisi le Contrat de nantissement des biens
+    - contrat de nantissement des biens
+
+- intent: garantie_3_L
+  examples: |
+    - j'ai un garant
+    - il a quelqu'un qui peut me garantie
+    - oui j'ai un garant
+    - je dispose de quelqu'un qui peut me garantir
+    - il a un personne qui peut me garantir
+    - un garant
+
+
+
+
+- intent: secteur_activite
+  examples: |
+    - Artisanat
+    - Commerce
+    - Privé
+    - Public
+    - Agriculture
+    - Service
+    - Agriculture 
+    - Paysage
+    - Alimentation 
+    - Agroalimentaire
+    - Animaux
+    - Architecture 
+    - Decoration
+    - Armee 
+    - Securite 
+    - Secours
+    - Banque 
+    - Finance 
+    - Assurance
+    - Biologie 
+    - Chimie
+    - BTP 
+    - Urbanisme
+    - Cinema 
+    - Audiovisuel 
+    - Jeux video
+    - Commerce 
+    - Immobilier
+    - Communication 
+    - Journalisme 
+    - Marketing
+    - Droit 
+    - Justice
+    - Edition 
+    - Imprimerie 
+    - Electricite 
+    - Electronique 
+    - Robotique
+    - energie
+    - Enseignement 
+    - Formation 
+    - Insertion
+    - Gestion 
+    - Comptabilité 
+    - RH
+    - Hotellerie 
+    - Restauration 
+    - Tourisme
+    - Informatique 
+    - Réseaux
+    - Industrie
+    - Mécanique 
+    - Automobile
+    - Sante
+    - Paramédical
+    - Secrétariat
+    - Social
+    - sport
+    - cotche
+    - Transport 
+    - Logistique
+- intent: activite
+  examples: |
+    - AUTRE ARTISANAT
+    - MAROQUINIER
+    - BABOUCHIER
+    - BIJOUTIER
+    - BRODEUR
+    - CARRELEUR
+    - CORDIER
+    - CORDONNIER
+    - COUTURIER
+    - DECORATEUR
+    - DINANDIER
+    - BRIQUETIER
+    - FABRIQUANT DE SACHETS PLASTIQUES
+    - FORGERON
+    - GRAVEUR
+    - MARBRIER
+    - MARQUETEUR
+    - MATELASSIER
+    - MENUISIER
+    - PECHEUR
+    - PEINTRE DE BOIS
+    - POTIER
+    - CUIVRIER
+    - PLANEUR
+    - SCULPTEUR
+    - TAILLEUR MODERNE
+    - TAILLEUR TRADITIONNEL
+    - TAMIER
+    - TANNEUR
+    - TAPISSIER
+    - TISSERAND
+    - TOLIER
+    - TRANSFORMATION DE PRODUITS AGRICOLES
+    - TISSEUR
+    - FABRIQUANT BOITE D EMBALLAGE
+    - TAILLEUR DE PIERRE
+    - FABRIQUANT BANDEAUX
+    - TRICOTEUSE
+    - PLATRIER
+    - ARTISAN D ARTICLES EN ALIMUNIUM
+    - CEINTURIER
+    - VANNIER
+    - ARTISAN D ARTICLES EN DOUM
+    - FERRONIER
+    - TRAVAILLEUR DE LAINE
+    - EBENISTE
+    - CERAMISTE
+    - ARTISAN GLACIER
+    - CHARCUTERIE
+    - TRAITEUR
+    - CHOCOLATIER
+    - CONFISSEUR
+    - FROMAGER
+    - FABRICANT
+    - VENDEUR DE BEIGNETS
+    - BAILLEUR
+    - AUTRES COMMERCES
+    - EPICIER
+    - VENDEUR D'ARTICLES EN CUIR
+    - BAZARISTE
+    - BOUCHER
+    - VENDEUR DE PAIN
+    - VENDEUR DE CHARBON
+    - VENDEUR DE CHAUSSURES
+    - VENDEUR DE BOUTEILLES DE GAZ
+    - VENDEUR PRODUITS AGRICOLES
+    - DROGUISTE
+    - VENDEUR D'EPICES
+    - VENDEUR FRUITS ET LEGUMES
+    - CREMIER
+    - VENDEUR MEUBLES ET DECORS
+    - VENDEUR D'OISEAUX
+    - VENDEUR D'HUILE ET D'OLIVES
+    - PAPETIER
+    - VENDEUR PARFUM
+    - PRODUITS BEAUT
+    - VENDEUR BONBONS
+    - VENDEUR POISSONS FRAIS
+    - STRATIFIEUR
+    - VENDEUR TISSU ET FOURNITURES
+    - VENDEUR ANCIENS HABITS
+    - VENDEUR CASETTES
+    - VENDEUR VETEMENTS
+    - VENDEUR ELECTROMENAGERS
+    - VENDEUR PIECES DETACHEES
+    - VITRIER
+    - VENTE DE POULETS
+    - VENDEUR PRODUITS DE LESSIVE
+    - VENDEUR DE PEPITES
+    - VENDEUR PROD/PHARMACEUTIQUES
+    - VENDEUR D'ESCAGOTS
+    - VENDEUR DE GLACE
+    - HERBORISTE
+    - VENDEUR DE BETAIL
+    - VENDEUR DE PRODUITS SANITAIRES
+    - VENDEUR D'OEUFS
+    - VENDEUR DE CEREALES
+    - FERAILLEUR
+    - VENDEUR FOURNITURES DE BAIN
+    - VENDEUR DE PEAUX
+    - VENDEUR PRODUITS POUR ELEVAGE
+    - VENDEUR DE JOUETS
+    - VENDEUR DE TABAC
+    - VENDEUR ESSENCE/PRD SIMILAIRES
+    - VENDEUR CARTON
+    - VENDEUR ET REPARATEUR DE PNEUS
+    - VENDEUR MATERIAUX CONSTRUCTION
+    - VENDEUR DE BOIS
+    - FLEURISTE
+    - VENDEUR ARTICLES DIVERS
+    - COMMERCANT EN BESTIAUX
+    - VENDEUR DE VOLAILLES
+    - VENDEUR DE GSM ET ACCESSOIRES
+    - VENDEUR DE CAISSES D'EMBALLAGE
+    - VENDEUR CREPES PROD SIMILAIRES
+    - VENDEUR DE PRODUITS LAITIERS
+    - VENDEUR ACCESSOIRES FEMMES
+    - VENDEUR CHAUSSURES
+    - VENDEUR FRUITS SECS
+    - VENDEUR LINGES DE MAISON
+    - VENDEUR PRODUITS DE NETTOYAGE
+    - VENDEUR ARTICLES DE CUISINE
+    - VENDEUR LUSTRES/QUINCAILLERIE
+    - VENDEUR JUS DE FRUITS
+    - VENDEUR DE BICYCLETTE
+    - VENDEUR DE PRODUITS DE POTERIE
+    - VENDEUR DE CD/DVD
+    - VENDEUR DE LUNETTES
+    - FONCTIONNAIRE
+    - ELEVEUR DE BOVINS ET D'OVINS
+    - ELEVEUR DE VACHES LAITIERES
+    - ELEVEUR DE VOLAILLES
+    - APICULTUREUR
+    - AUTRES ACTIVITES D ELVAGE
+    - AUTRES ACTIVITES RURALES
+    - ELEVEUR DE POISSON
+    - ELEVEUR DE CHAMEAU
+    - AQUACULTEUR
+    - CONCHYLICULTEUR
+    - CULTIVEUR DE JARDIN
+    - MYTILICULTEUR
+    - OSTREICULTEUR
+    - PEPINIERISTE
+    - SYLVICULTEUR
+    - PRODUCTEUR PRODUITS TERROIRE
+    - RENTIER
+    - SALARIE
+    - AUTRES SERVICES
+    - ADOUL
+    - IMPRIMEUR
+    - TENANCIER DE BAIN MAURE/SPA
+    - BLANCHISSEUR
+    - BOULANGER
+    - TENANCIER D UNE BUVETTE/CAFE
+    - TAXIMAN
+    - COIFFEUR
+    - ESTHETICIENNE
+    - DENTISTE
+    - ECRIVAIN NUMERIQUE PUBLIC
+    - ELECTRICIEN BATIMENT
+    - EDUCATEUR
+    - FORMATEUR
+    - POSEUR DE MOSAIQUE
+    - HORLOGER
+    - LIBRAIRE
+    - MACON
+    - MECANICIEN
+    - MEUNIER
+    - NEGGAFA
+    - NEKKACHA
+    - BOBINEUR
+    - ORGANISATEUR DE FETES
+    - PATISSIER
+    - PEINTRE DE BATIMENT
+    - PHOTOGRAPHE
+    - CAMERAMAN
+    - PLOMBIER
+    - REPARATEUR ARTICLES ELECTROMENAGERS
+    - REPARATEUR DE VELOS ET MOTO
+    - IMPORTATEUR
+    - EXPORTATEUR
+    - ENTREPRENEUR CONSTRUCTION
+    - RESTAURATEUR
+    - TENANCIER SALLE JEUX ENFANTS
+    - TRANSPORTEUR DE MARCHANDISES
+    - SOUDEUR
+    - TENANCIER SALLE DE SPORT
+    - TELEBOUTIQUE
+    - ARTISTE
+    - TOURNEUR
+    - AGENT IMMOBILIER
+    - HOTELIER
+    - INFIRMIER PRIVE
+    - OPTICIEN
+    - FIDUCIAIRE
+    - ElECTRICIEN AUTO
+    - MUSICIEN
+    - REPARATEUR GSM/TV/ORDINATEURS
+    - TENANCIER DE CYBER
+    - SERRURIER
+    - TENANCIER
+    - AUTO ECOLE
+    - PRESTATAIRE DE SERVICES CULINAIRES
+    - TENANCIER STATION LAV/AUTO
+    - REPARATEUR MACHINE EQUIPEMENT
+    - CUPPING THERAPEUTE
+    - BARBIER
+    - MAQUILLEUSE HABILLEUSE MARIEES
+    - ARTISTE DE HENNE
+    - PROTHESISTE DENTAIRE
+- intent: A_email
+  examples: |
+    - contact@votrenom.com
+    - email@votrenom.com
+    - moi@votrenom.ac.com
+    - poste@votrenom.com
+    - initiales@votrenom.com
+    - examle.prenom@usmba.ac.ma
+    - prenom.nom@gmail.com
+    - initialePrenom.nom@usmba.com
+    - ptest.nomXX@hotmail.com
+    - heho.hihi@gmail.ma
+    - frr.ali245@cc.ma
+- intent: identite_alamana
+  examples: |
+    - c'est quoi alamana ?
+    - parle moi de alamana
+    - chno hya alamana
+    - je veux savoir c'est quoi alamana
+    - donne moi une ideé sur alamana
+    - c'est quoi alamana
+    - pouvez vous definir alamana
+- intent: mission_alamana
+  examples: |
+    - la mission
+    - c'est quoi la mission de alamana
+    - pouvez vous de me parler de mission de alamana
+    - mission de alamana
+    - donne moi la mission de alamana
+    - indique la mission de alamana
+    - pouvez vous definir la mission de alamana
+- intent: vision_alamana
+  examples: |
+    - la vision
+    - donne moi sa vision
+    - je savoir sa vision
+    - pouvez vous me donner sa vision
+    - c'est quoi la vision de alamana
+    - indique moi la vision de alamana
+    - definir la vision de alamana
+- intent: valeurs_alamana
+  examples: |
+    - quels sont les valeurs de alamana ?
+    - les valeurs de alamana
+    - ses valeurs svp
+    - je veux voir ses valeurs?
+    - montre moi les valeurs de alamana ?
+    - pouvez vous indiquer les valeurs de alamana
+- intent: reseau_agences_alamana
+  examples: |
+    - son reseau d'agences
+    - les agences que vous avez chez alamana
+    - je veux savoir le réseau d'agences de alamana
+    - combient d'agences vous avez au maroc ?
+    - parle moi de votre reseau d'agences
+- intent: nombre_agences_alamana
+  examples: |
+    - combient d'agences dispose alamana ?
+    - le nombre d'agences
+    - combient d'agences vous avez ?
+    - vous avez combient d'agences au maroc
+- intent: prix_distinctions_alamana
+  examples: |
+    - alamana a obtenu des prix ?
+    - quels sont les prix que alamana a obtenu
+    - prix et distinctions
+    - les prix de alamana
+    - les distinctions de alamana
+    - les prix et distinctions de alamana
+    - indiquer les prix et les distinction que alamana a obtenu
+    - montre moi les prix les distinction que alamana a obtenu
+- intent: partenaires_alamana
+  examples: |
+    - ses partenaires
+    - les partenaires de alamana
+    - je veux voir les partenaires de alamana
+    - donne moi les partenaires de alamana
+    - pour ses partenaires
+- intent: partenaires_alamana_2
+  examples: |
+    - est ce que alamana apartient a [FNAM](partenaire) ?
+    - alamana est il membre de [FNAM](partenaire) ?
+    - [FNAM](partenaire) est un partenaire de alamana ?
+    - [FNAM](partenaire) apratient aux partenaires de alamana ?
+    - je veux savoir est ce que [FNAM](partenaire) est partenaire de alamana
+    - est ce que alamana est un membre de [sanabel](partenaire)
+    - est ce que alamana apartient a [sanabel](partenaire) ?
+    - alamana est il membre de [sanabel](partenaire) ?
+    - [sanabel](partenaire) est un partenaire de alamana ?
+    - [sanabel](partenaire) apratient aux partenaires de alamana ?
+    - je veux savoir est ce que [sanabel](partenaire) est partenaire de alamana
+    - est ce que alamana est un membre de [WWB](partenaire)
+    - est ce que alamana apartient a [WWB](partenaire) ?
+    - alamana est il membre de [WWB](partenaire) ?
+    - [WWB](partenaire) est un partenaire de alamana ?
+    - [WWB](partenaire) apratient aux partenaires de alamana ?
+    - je veux savoir est ce que [WWB](partenaire) est partenaire de alamana
+    - est ce que alamana apartient a [MFN](partenaire) ?
+    - est ce que alamana est un membre de [MFN](partenaire)
+    - alamana est il membre de [MFN](partenaire) ?
+    - [MFN](partenaire) est un partenaire de alamana ?
+    - [MFN](partenaire) apratient aux partenaires de alamana ?
+    - je veux savoir est ce que [MFN](partenaire) est partenaire de alamana
+    - est ce que alamana apartient a [AMT](partenaire) ?
+    - est ce que alamana est un membre de [AMT](partenaire)
+    - alamana est il membre de [AMT](partenaire) ?
+    - [AMT](partenaire) est un partenaire de alamana ?
+    - [AMT](partenaire) apratient aux partenaires de alamana ?
+    - je veux savoir est ce que [AMT](partenaire) est partenaire de alamana
+    - est ce que alamana apartient a [MAIN](partenaire) ?
+    - est ce que alamana est un membre de [MAIN](partenaire)
+    - alamana est il membre de [MAIN](partenaire) ?
+    - [MAIN](partenaire) est un partenaire de alamana ?
+    - [MAIN](partenaire) apratient aux partenaires de alamana ?
+    - je veux savoir est ce que [MAIN](partenaire) est partenaire de alamana
+    - est ce que alamana apartient a [CGAP](partenaire) ?
+    - est ce que alamana est un membre de [CGAP](partenaire)
+    - alamana est il membre de [CGAP](partenaire) ?
+    - [CGAP](partenaire) est un partenaire de alamana ?
+    - [CGAP](partenaire) apratient aux partenaires de alamana ?
+    - je veux savoir est ce que [CGAP](partenaire) est partenaire de alamana
+- intent: dates_cle_alamana
+  examples: |
+    - je veux voir ses dates cles ?
+    - quelle sont ses dates cles ?
+    - les dates cle de alamana
+    - donne moi les dates cle de alamana
+    - quel sont les dates cle de alamana
+    - je peux savoir ses dates cle
+    - affiche moi les dates cle
+    - je peux savoir quels sont les périodes clé sur lesquel alamana passe
+    - je veux connaitre les périodes sur lesquelles alamana avait passé
+- intent: debuts_alamana
+  examples: |
+    - parle moi de ses debuts
+    - je veux voir la période de ses debuts
+    - la période de ses debuts
+    - les dates de ses debuts
+    - la premiere période
+    - les dates cles de ses debuts
+    - je veux savoir sa premiere période
+    - des informations sur la période des ses débuts
+- intent: expansion_alamana
+  examples: |
+    - parle moi de son expansion
+    - je veux voir la période de son expansion
+    - la période de son expansion
+    - les dates de son expansion
+    - la deuixieme période
+    - les dates cles de son expansion
+    - je veux savoir sa deuxieme période
+    - des informations sur la période des son expansion
+    - je veux voir la période de sa Croissance
+    - la période de sa Croissance
+    - les dates de sa Croissance
+    - je veux voir la période de son Développement
+    - la période de son Développement
+    - les dates de son Développement
+    - je veux voir la période de son Extension
+    - la période de son Extension
+    - les dates de son Extension
+- intent: distinctions_alamana
+  examples: |
+    - parle moi de ses distinctions
+    - je veux voir la période de ses distinctions
+    - la période de ses distinctions
+    - les dates de ses distinctions
+    - la troisieme période
+    - les dates cles de ses distinctions
+    - je veux savoir sa troisieme période
+    - des informations sur la période des ses distinctions
+    - parle moi de ses Prix
+    - quels sont ses distinctions
+    - les prix obtenu par alamana
+    - les Médailles de  alamana
+    - les prix d'alamana
+    - Titres honorifiques d'alamana
+    - Titres honorifiques
+- intent: Gouvernance_alamana
+  examples: |
+    - parle moi du gouvernance d'alamana
+    - de quoi il se constiuée la gouvernance d'alamana
+    - je veux connaitre la gouvernance d'alamana
+    - donne moi une idée sur gouvernance
+    - je veux savoir une idée sur gouvernance d'alamana
+    - pouvez vous me parler de la gouvernance d'alamana
+    - parle moi du Direction d'alamana
+    - de quoi il se constiuée la Direction d'alamana
+    - je veux connaitre la Autorité d'alamana
+    - donne moi une idée sur Autorité
+    - je veux savoir une idée sur Direction d'alamana
+    - pouvez vous me parler de la Direction d'alamana
+- intent: Conseil_Administration
+  examples: |
+    - conseil d'Administration ?
+    - je veux savoir le conseil d'Administration ?
+    - parle moi du conseil d'Administration d'alamana?
+    - je veux savoir une idée sur conseil d'Administration
+    - c'est quoi le conseil d'Administration ?
+- intent: membre_C_Administration
+  examples: |
+    - membre du Conseil d'Administration ?
+    - membre du Conseil administration ?
+    - je veux savoir le membre du conseil d'Administration ?
+    - parle moi du membre de conseil d'Administration d'alamana?
+    - je veux savoir une idée sur les membre de conseil d'Administration
+    - quels sont les membre du conseil d'Administration ?
+    - pouvez vous indiquer les membres conseil d'Administration
+- intent: bureau_executif
+  examples: |
+    - c'est quoi le Bureau exécutif
+    - je veux savoir le Bureau exécutif
+    - parle moi du Bureau exécutif
+    - Bureau exécutif  ?
+    - quel le role du Bureau exécutif
+    - le role Bureau exécutif
+    - je connaitre le Bureau exécutif
+    - je veux savoir le role du Bureau exécutif
+    - pour le role du Bureau exécutif
+- intent: membre_Bureau_executif
+  examples: |
+    - membre du Bureau exécutif ?
+    - membre du Bureau exécutif  ?
+    - je veux savoir le membre du Bureau exécutif  ?
+    - parle moi du membre de Bureau exécutif  d'alamana?
+    - je veux savoir une idée sur les membre du Bureau exécutif
+    - quels sont les membre du Bureau exécutif ?
+    - pouvez vous indiquer les membres Bureau exécutif
+- intent: membre_Comite_executif
+  examples: |
+    - membre du Comité exécutif ?
+    - membre du Comité exécutif  ?
+    - je veux savoir le membre du Comité exécutif ?
+    - parle moi du membre du Comité exécutif d'alamana?
+    - je veux savoir une idée sur les membre du Comité exécutif
+    - quels sont les membre du Comité exécutif ?
+    - pouvez vous indiquer les membres du Comité exécutif
+
+- intent: question_sur_adresse_agences
+  examples: |
+    - est ce que vous avez une agence à fes
+    - je veux savoir au vous avez vos agence
+    - je veux connaitre l'agence la plus proche pour moi
+    - vous avez une agence à rabat yacoub mansour ?
+    - l'agence la plus proche de yacoub mansour ?
+    - les agences que vous aves à fes 
+    - les agences de tanger 
+    - l'agance la plus proche ou quartier atlass
+    - les agences plus proche a mon quartier
+    - je veux avoir une adresse
+    - ou ce trouve l'agence telle
+    - je cherche une agence
+    - je veux adresse d'une agence
+    - pouvez vous m'aider pour trouver l'agence la plus proche
+    - je cherche adresse d'une agence
+    - pouvez vous me donner les agences que vous avez
+    - les adresse de vous agences
+
+- intent: A_ville
+  examples: |
+    - Afourar
+    - Agadir
+    - Agadir
+    - Agadir
+    - Agadir
+    - Agdz
+    - Agourai
+    - Ahfir
+    - Ain Aicha
+    - Ain Aouda
+    - Ain Bni Mathar
+    - Ain Harrouda
+    - Ain Taoujdate
+    - Ait Baha
+    - Ait Melloul
+    - Ait Melloul
+    - Aklim
+    - Aknoul
+    - Al Aaroui
+    - Al Hoceima
+    - Méknès
+    - Arfoud
+    - Arkmane
+    - Asni Marrakech
+    - Assilah
+    - Assilah
+    - Azemmour
+    - Azemmour
+    - Azilal
+    - Azilal
+    - Azrou
+    - Azrou
+    - AZROUA
+    - Bab Taza
+    - Bejaad
+    - Ben Ahmed
+    - Ben Guerir
+    - Ben Guerir
+    - Ben taib
+    - Béni Mellal
+    - Béni Mellal
+    - Beni Mellal
+    - Beni Mellal
+    - Benslimane
+    - Benslimane
+    - Berkane
+    - Berkane
+    - Berkane
+    - Berrechid
+    - Berrechid
+    - INCHADEN
+    - Biougra
+    - Bni Ansar
+    - Bni Ansar
+    - Bouarfa
+    - Boudnib
+    - Boufakrane
+    - Boujdour
+    - Boujniba
+    - Boulmane
+    - Boumalne Dades
+    - Bouznika
+    - Bouznika
+    - CASABLANCA
+    - Casablanca
+    - Casablanca
+    - Casablanca
+    - Chefchaouen
+    - Chefchaouen
+    - Chichaoua
+    - Dakhla
+    - Dakhla
+    - Dar kabdani
+    - Demnate
+    - Douar ouled Youssef
+    - Echemmaia
+    - El Aioun
+    - El Borouj
+    - El Gara
+    - El Gara
+    - El Hajeb
+    - EL Haouafat
+    - El Jadida
+    - El Jadida
+    - El Kelaa des Sraghna
+    - El Kelaa des Sraghna
+    - El Kelaa des Sraghna
+    - El Ksiba
+    - EL Marsa
+    - El Menzel
+    - El Ouatia
+    - Errachidia
+    - Errachidia
+    - Er-rich
+    - Essaouira
+    - Essaouira
+    - Essaouira
+    - Es-semara
+    - Fès
+    - Fès
+    - Fès
+    - Fès
+    - Fes
+    - Fes
+    - Fes
+    - Figuig
+    - Figuig
+    - Figuig
+    - Fkih Ben Salah
+    - Fkih Ben Salah
+    - Fkih Ben Salah
+    - Fnidq
+    - Foum El Hisn
+    - Foum Jemaa
+    - Foum Zguid
+    - Ghafsai
+    - Ghafsai
+    - Goulmima
+    - Guelmim
+    - Guelmim
+    - Guercif
+    - Guercif
+    - Had Kort
+    - Ifrane
+    - Ifrane
+    - Imntanoute
+    - Imouzzer Kandar
+    - Imouzzer Marmoucha
+    - Imzouren
+    - Inezgane
+    - Inezgane
+    - Jamaat Shaim
+    - Jerada
+    - Jorf
+    - Jorf El Melha
+    - Kalaat M'gouna
+    - Karia Ba Mohamed
+    - Kasbet Tadla
+    - Kénitra
+    - Kénitra
+    - Kenitra
+    - Kenitra
+    - Knitra
+    - Khémisset
+    - Khemisset
+    - Khémisset
+    - Khénifra
+    - Khénifra
+    - Khouribga
+    - Khouribga
+    - Ksar El Kébir
+    - Ksar El Kébir
+    - Laattaouia
+    - Laattaouia
+    - Laayoune
+    - Laayoune
+    - Larache
+    - Larache
+    - Lbir Jdid
+    - Lissassfa
+    - Loulad
+    - Marrakech
+    - Marrakech
+    - Marrakech
+    - Martil
+    - Martil
+    - Massa
+    - M'Diq
+    - M'Diq
+    - Mechra Bel ksiri
+    - Mediouna
+    - Méknès
+    - Méknès
+    - Méknès
+    - Méknès
+    - Meknes
+    - Meknes
+    - Meknes
+    - Méknès
+    - Mers EL Khir
+    - Midar
+    - Midar
+    - Midelt
+    - Missour
+    - Mohammadia
+    - Mohammadia
+    - Mohammadia
+    - Moulay Yaacoub
+    - M'Rirt
+    - Khénifra
+    - M'Rirt
+    - Khénifra
+    - Khénifra
+    - Nador
+    - Nador
+    - Nador
+    - Nouaceur
+    - Ouad Zem
+    - Ouarzazate
+    - Ouarzazate
+    - Oued Amlil
+    - Ouezzane
+    - Ouezzane
+    - Oujda
+    - Oujda
+    - Oujda
+    - Oulad Abbou
+    - Oulad Ayad
+    - Oulad Berhil
+    - Oulad Teima
+    - Oulad Teima
+    - Outat El Haj
+    - Rabat
+    - Rabat
+    - Rabat
+    - Ribate El Kheir
+    - Rommani
+    - Sabaa Aiyoun
+    - Safi
+    - Safi
+    - Safi
+    - Safi
+    - Saidia
+    - Salé
+    - Salé
+    - Salé El Jadida
+    - Sebt Gzoula
+    - Sefrou
+    - Sefrou
+    - Selouane
+    - Selouane El Omrane
+    - Settat
+    - Settat
+    - Sidi Bennour
+    - Sidi Bennour
+    - Sidi Bennour
+    - Sidi Bibi
+    - Sidi Bouknadel
+    - Sidi Ifni
+    - Sidi Ifni
+    - Sidi Kacem
+    - Sidi Kacem
+    - Sidi Rahal
+    - Sidi Rahhal
+    - Sidi Slimane
+    - Sidi Slimane
+    - Sidi Slimane
+    - Sidi Yahya El Gharb
+    - Skhirate
+    - Souk El Arbaa
+    - Souk El Arbaa
+    - Souk Sebt
+    - Souk Sebt
+    - Tafraout
+    - Tahla
+    - Taliouine
+    - Talmest
+    - REHAMNA
+    - Tamallalt
+    - Tamanar
+    - Tamansourte
+    - Tamesna
+    - Tan tan
+    - Tanger
+    - Tanger
+    - Tanger
+    - Taounate
+    - Taourirt
+    - Tarfaya
+    - Targuist
+    - Taroudannt
+    - Taroudant
+    - Tata
+    - Tata
+    - Taza
+    - Taza
+    - Taznakht
+    - Témara
+    - Témara
+    - Temara
+    - temara
+    - Tetouan
+    - Tétouan
+    - Tétouan
+    - Tetouan
+    - Tetouan
+    - Thar Es-souk
+    - Tiddas
+    - TIFLET
+    - Tinejdad
+    - Tinghir
+    - Tissa
+    - Tit Mellil
+    - Tiznit
+    - Tiznit
+    - Youssoufia
+    - Zagora
+    - Zagora
+    - Zaio
+    - Zaouiat Cheikh
+    - Zémamra
+    - Zghanghane
+    - Sidi Yahya Zaer
+    - Boukhalef Gzanaya
+    - Ain Madiouna
+    - Loulja
+    - AIN CHKEF
+    - Anjra
+    - Bni Ahmed Cherqia
+    - Azzaba
+    - Skoura M'Daz
+    - Guigou
+    - Ain Cheggag
+    - Bir Tam Tam
+    - Ksabi Moulouya
+    - Temsaman
+    - Gourrama
+    - Er-rissani
+    - Bni Tadjite
+    - Aoufous
+    - Alnif
+    - Aourir
+    - Tamsia
+    - Douar Hmar
+    - Ait Iaaza
+    - Aoulouz
+    - Irherm
+    - Sebt el Guerdane
+    - Oulad M'Barek
+    - Moulay Aissa Ben Driss (ait aatab)
+    - Aghbala
+    - Tanant
+    - Oulad Yaich
+    - Bzou
+    - Bradia
+    - Guisser
+    - Sidi Mohammed Ben Rahal
+    - Sidi El Aidi
+    - Moualine El Oued
+    - Fdalat
+    - Oulad Said
+    - Ras El Ain
+    - Dar Chaffai
+    - Sidi Hajjaj
+    - Sidi Aadi
+    - Ras Ijerri
+    - Zaggota
+    - N'zalat Bni Amar
+    - Sfassif
+    - Ain Karma
+    - Sidi Lamine
+    - Boumia
+    - Tounfite
+    - Itzer
+    - Ait Ayach
+    - Louizia
+    - Soualem
+    - Sidi Maarouf
+    - Bouskoura
+    - Dar Bouazza
+    - M'Tal
+    - Had Laaounate
+    - Mettouh
+    - LAAOUINATE
+    - Sidi Abed
+    - Labkhati
+    - Oulad Frej
+    - Oulad Hamdane
+    - OuIad Ghanem
+    - Loualidia
+    - My Abdellah
+    - Sidi Smail
+    - Bni Hilal
+    - Oulad Hssine
+    - Chtouka
+    - Ighoud
+    - Jdour
+    - Oulad Amrane
+    - El Gantour
+    - Lamaachate
+    - Bouguedra
+    - Hrara
+    - Moul El Bergui
+    - El Beddouza
+    - El GHIATE
+    - Nagga
+    - Ait Ourir
+    - Tassoultante
+    - Ouahat Sidi Brahim
+    - Tighdouine
+    - Ourika
+    - Talat N'Yaaqoub
+    - Tahnaout
+    - Oulad Hassoune
+    - Sidi Abdallah Ghiat
+    - Skhour Rhamna
+    - Fraita
+    - Oulad Aamer
+    - Assahrij
+    - Ait Aadel
+    - Arbaoua
+    - Allal Tazi
+    - Sidi Al Kamel
+    - Moulay Bousselham
+    - Sidi Mohamed Lahmar
+    - Sidi Redouane
+    - Lalla Mimouna
+    - Zoumi
+    - Khnichet
+    - Khemiss Remilla
+    - Ain Dourrige
+    - Sidi Bousber
+    - Oulmes
+    - Sebt ait abbou
+    - Sidi Abderrazak
+    - Sidi Allal Bahraoui
+    - Maaziz
+    - Ait Yadine
+    - Aquermoud
+    - Tlat Elhanchane
+    - Ida ou zamzam
+    - Smimou
+    - Ait Daoud
+    - Sid L'Mokhtar
+    - Ait Hadi
+    - Majjat
+    - Bouabout
+    - Lamzoudia
+    - Zaouia Annahlia
+    - Oulad Zbair
+    - Galdamane
+    - Msila
+    - Saka
+    - Lamrija
+    - Souihla
+    - Amzmiz
+    - M'Nabha
+    - Tameslohte
+    - Loudaya
+    - Sidi Bou Otmane
+    - Sidi Bibi
+    - El Gfifate
+    - Bouizakarne
+    - Ait Amira
+    - Massa
+    - Laqliaa
+    - Belfaa
+    - Shoul
+    - Lalla Takerkoust
+    - Méknès
+    - Salé
+    - Tiflet
+    - SIDI IFNI
+    - MEHDYA
+
+
+
+- intent: A_quartier
+  examples: |
+    - N°62,  Rue Hassan  Ii, Commune Ouled  Jerrar 
+    - Rue Principale Aglou
+    - Douar Zaouia
+    - N° 467, Avenue Bir Anzarane Tiznit Quartier Industriel Route De Gulmim Tiznit
+    - Avenue  Hassan Ii,  Widadiyat Tiginit Lakhssas
+    - 22, Rue Sidi Boumehdi, Hay Essalam  El Youssoufia Safi
+    - Av. Al Madrassa, Aït Elhaj Elhssain
+    - Bd Mod V Hay Salama Tagounite
+    - Av. Mohamed V, En Face De L'École My Cherif  Alaoui-Zagora
+    - N°414, Lot Draa 2, Avenue Mohamed V Zagora 
+    - Rue Abdelkarim El Khattabi N° 34 Zaio Centre 
+    - Hay Ikkour, Boulevard Dakhla,  Zaouit Cheikh  Cp 23700
+    - Cité Chabab N°95 Khémiss Zémamra- El Jadida 
+    - Av. Mohammed V, Centre Oulad Mrah Settat
+    - Avenue Hassna Ii, Sidi Addi Centre
+    - Douar Ait Messaoud Ras Jerri El Hajeb
+    - Cp 51032"
+    - Douar Aoulad Mrabet, Centre Zaggota
+    - N'Zalat Bni Amar, Centre Commune N'Zalat Bni Amar
+    - Douar Ait Ali Ait Magzar Sfassif Centre Khémisset 
+    - N°29, Lot. Oulad Ali, Commune Aïn Karma
+    - Cp 50023"
+    - Rez De Chausée, Route Principale, Quartier Administratif, Sidi Lamine, Kahf Nsour
+    - N°8, Avenue La Marche Verte, Rue Ibn Sina, Boumia
+    - Ait Abdi, Commune Tounfite 
+    - Avenue Allal Ben Abdellah, Hay Au Dessus De  Sakya,  Itzer
+    - Rue Principale, Centre Ait Oumghar 
+    - Ait Ayach"
+    - Lot Smikref N°53 Rue N° 5 
+    - Bni Yakhlef"
+    - Lotissement Anhi, Assahel Oulad Hriz, N° 186, Soualem
+    - 157,  Lotissement Amine   2Ème Étage Sidi Maarouf  
+    - Douar Lehouami Centre Bouskoura Casa
+    - Sidi Allal Tazi Centre
+    - Ahmed Chbbak, Douar Oulad Sghir, Oulad Harti, Commune Sidi Al Kamel
+    - Al Mandar Al Jamil, Villa N° 332, 1Er Étage, Moulay Bousselham
+    - Dar Ahmed Graïn, Centre Sidi Mohamed Lahmer
+    - Dar Mohammed Abrard, Centre Commune Sidi Redouan
+    - Lala Mimouna Centre Souk Larbaa El Gareb
+    - N° 5, Lotissement Rouman-Zoumi Centre
+    - Av. Hassane Ii, En Face De La Bp, Commune Khnichet
+    - N° 02, Appt 01,1Er Étage, Av. Mohamed V, Dar Elgaddari
+    - 96, Lot Centre, Village Pilote, Commune Lamjaara
+    - Centre Sidi Bousber 
+    - N°10 Hay Al Amal Oulmes
+    - Avenue Mohamed Zerktouni, Hay Al Amal, Rue Kacem Amine N°88
+    - Centre Commune Sidi Abderrazak, Lakhzazna
+    - 158, Hay Ennasr, Commune Sidi Allal Bahraoui
+    - N°38,Quartier  Administratif, Commune Maaziz
+
+- intent: patente
+  examples: |
+    - patente
+    - j'ai une patente
+    - numero de patente
+    - je dispose d'une patente
+    - je peux fournir le numero de patente
+    - patente
+
+- intent: ICE
+  examples: |
+    - ICE
+    - ice
+    - j'ai un ice
+    - j'ai une Identifiant Commun Entreprise
+    - IDENTIFIANT COMMUN ENTREPRISE
+    - identifiant commun entreprise
+    - numero d'Identifiant Commun Entreprise
+    - numero ICE
+    - je dispose d'Identifiant Commun Entreprise
+    - je dispose d'un ice
+    - je peux fournir le numero d'ice
+    - je peux fournir le numero d'Identifiant Commun Entreprise
+
+- intent: RC
+  examples: |
+    - RC
+    - rc
+    - registre commerce
+    - REGISTRE COMMERCE
+    - j'ai un rc
+    - j'ai le registre commerce
+    - j'ai un registre commerce
+    - numero d'Identifiant registre commerce
+    - numero rc
+    - numero de RC
+    - numero registre commerce
+    - je dispose d'un registre commerce
+    - je dispose d'un rc
+    - je peux fournir le numero rc
+    - je peux fournir numero de registre commerce
+    
+- intent: question_date_creation
+  examples: |
+    - quand al amana etait crée
+    - a quelle annee alamana etait creé
+    - je veux savoir l'année de création d'alamana
+    - donne moi la date de création d'alamana
+    - je veux la date de création d'alamana
+    - année de creation d'alamana
+    - la date de création d'alamana
+
+- intent: question_sur_montant
+  examples: |
+    - combient vous pouvez me donner comme montant
+    - combient le montant maximale que vous pouvez me donner
+    - combient le montant minimale que vous pouvez me donner
+    - quel est le montant que vous pouvez me donner
+    - je peux avoir combient comme montant dans mon prêt
+    - vous pouvez me donner combient comme montant
+    - le montant minimale que je peux avoir
+    - les montant que vous propose variée de quoi a quoi
+    - c'est quoi le maximum que vous pouvez donne 
+    - c'est quoi le mantant maximale que vous pouvez donne
+    - je veux voir le montant maxiamle
+    - combient le montant maximale que vous offre dans vos produits
+    - c'est quoi le plafand des montant que vous offrez
+    - Quel est le plafond de montant offert dans vos produits ?
+    - Quel est le plafond de montant offert dans vos crédits?
+    - Quelle est la limite supérieure du montant que vous proposez dans vos offres?
+    - Quel est le montant maximum que vous offrez?
+    - Quel est le montant le plus élevé que vous proposez dans vos offres?
+
+- intent: question_combient_offre
+  examples: |
+    - combient d'offre vous propose chez alamana
+    - je veux voir le nombre d'offre que vous propose
+    - quel est le nombre d'offres que vous propose
+    - combient de produit vous avez chez alamana
+    - je veux savoir le nombre de produits que vous propose
+    - donne moi le nombre de produits que vous propose
+    - donne moi le nombre de offres que vous avez 
+
+- intent: question_pour_simulation
+  examples: | 
+    - je suis un entrepreneur, et je veux un prets de 150000 dh pour acheter des fornitures pour mon entreprise combien de temps j'ai besion de temps pour le rembourser
+    - je veux un prets de 10000 dh combient je doit payer chaque mois
+    - combient je doit payer chaque mois pour un credit de 10000 dh 
+    - si je payer 5000 dh par mois combient vous pouvez me donner comme crédit
+    - je veux faire une similation pour mon crédit
+    - alors si je veux acheter un logement pour mn entreprise combient je dois payer par mois
+    - combien de temps j'ai besion pour rembourser un crédit de 15000 dh
+    - a combien de temps j'ai besoin pour remborser un crédit
+    - je savoir a combient de mois j'ai besoin pour remberser mon crédit de 20000 dh
+    - si je prende un crédit de 20000 dh combient je dois payer par mois 
+    - combient je doit payer par mois pour un crédit de 30000 dh
+    - un prêt de 20000 dh remborsable a combien de mois
+    - le nombre des traites que je ra pour un montant de 20000 dh
+    - combient de traites j'ai besoin pour un crédit de 150000 dh
+    - donne moi le nombre de traites pour un crédit de 20000 dh
+    - je doit payer combient pour un crédit de 30000 dh
+    - je veux une simulation pour mon crédit
+    - comment puis-je faire pour savoir combient je doit payer chaque mois
+    - le credit de tamwill tanmiya je dois le remborés a combient de temps 
+    - si je prends un crédit milkia commbient de traites
+    - le payment d'un credit de 20000 nécessite combient par mois
+
+- intent: chiffres_cles
+  examples: |
+    - chiffres cles d'alamana
+    - donne moi vos chiffres cles
+    - je vous voir quelques statistiques sur alamana
+    - merci de me donner quelque statistiques sur vous 
+    - je veux voir vos statistiques
+    - donner moi les chiffres cles
+    - les chiffres cles d'alamana
+    - quelques statistiques svp
+    - merci de me donner le nombre des clients active
+    
+- lookup: partenaire
+  examples: |
+    - FNAM
+    - sanabel
+    - WWB
+    - MFN
+    - AMT
+    - MAIN
+    - CGAP
+    - fnam
+    - SANABEL
+    - wwb
+    - mfn
+    - amt
+    - main
+    - cgap
+
+- lookup: offre_souhaitez
+  examples: |
+    - milkia
+    - MILKIA
+    - moumtaz
+    - MOUMTAZ
+    - oto
+    - OTO
+    - tanmiya
+    - TANMIYA
+    - pie
+    - PIE
+    - PIL
+    - pil
