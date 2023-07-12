@@ -1,0 +1,12 @@
+
+
+-----------------------  les deux commandes nécessaires pour démarrer le CHATBOT --------------------------------
+
+rasa run --enable-api --cors "*" ==> pour demarer le serveur du modèle
+rasa run actions                 ==> pour demarer le serveur actions
+---------------------------------------------------------------------------------------------------------------
+
+rasa train 			 ==> pour entrainer un nouveau modèle
+rasa interactive                 ==> pour interagir avec le modèle et le faire apprendre
+rasa shell + rasa run actions    ==> pour demarer le chatbot dans le shell
+
